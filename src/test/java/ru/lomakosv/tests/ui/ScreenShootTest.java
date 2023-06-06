@@ -1,0 +1,74 @@
+package ru.lomakosv.tests.ui;
+
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import ru.lomakosv.helpers.Annotations.Critical;
+import ru.lomakosv.tests.ui.pages.LoginPage;
+import ru.lomakosv.tests.ui.pages.MainPage;
+import ru.lomakosv.utils.AssertScreenShootUtil;
+import ru.lomakosv.utils.PathScreenShot;
+
+import static io.qameta.allure.Allure.step;
+
+@Feature("UI: Скриншоты страниц")
+@Story("Проверка скриншотов страниц")
+@DisplayName("UI: Скриншоты страниц")
+public class ScreenShootTest extends UiTestBase {
+
+    private MainPage mainPage;
+    private LoginPage loginPage;
+    private AssertScreenShootUtil assertScreenShootUtil;
+
+    @BeforeEach
+    void setUpTest() {
+        mainPage = new MainPage();
+        loginPage = new LoginPage();
+        assertScreenShootUtil = new AssertScreenShootUtil();
+    }
+
+    @Critical
+    @Owner("SLomako")
+    @DisplayName("Тест: Скриншот заголовка главной страницы")
+    @Test
+    void testMainPageHeader() {
+        String screenshotName = "mainpage_header";
+        String expectedScreenshotPath = PathScreenShot.getExpectedScreenshotPath(screenshotName);
+        String actualScreenshotPath = PathScreenShot.getActualScreenshotPath(screenshotName);
+        String diffImagePath = PathScreenShot.getDiffImagePath(screenshotName);
+
+        step("Открыть главную страницу", () ->
+                mainPage.openPage());
+
+        step("Сделать скриншот заголовка главной страницы", () ->
+                step("Проверка идентичности скриншотов", () ->
+                        assertScreenShootUtil.takeAndCompareScreenshots(mainPage.getHeaderElement(), expectedScreenshotPath,
+                                actualScreenshotPath, diffImagePath)));
+    }
+
+    @Critical
+    @Owner("SLomako")
+    @DisplayName("Тест: Скриншот тела формы входа")
+    @Test
+    void testLoginBody(){
+        String screenshotName = "login";
+        String expectedScreenshotPath = PathScreenShot.getExpectedScreenshotPath(screenshotName);
+        String actualScreenshotPath = PathScreenShot.getActualScreenshotPath(screenshotName);
+        String diffImagePath = PathScreenShot.getDiffImagePath(screenshotName);
+
+        step("Открыть страницу входа", () ->
+                loginPage.openLoginPage());
+
+        step("Нажать на заголовок формы входа", () ->
+                loginPage.clickLoginFormHeader());
+
+
+        step("Сделать скриншот тела формы входа", () ->
+                step("Проверка индентичности скриншотов", () ->
+                        assertScreenShootUtil.takeAndCompareScreenshots(loginPage.getBodyElement(),
+                                expectedScreenshotPath, actualScreenshotPath, diffImagePath)));
+    }
+}
