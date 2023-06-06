@@ -20,12 +20,14 @@ import java.util.Map;
 @Execution(ExecutionMode.CONCURRENT)
 public class UiTestBase {
 
-    private static final UiConfig webConfig = ConfigurationManager.getUiConfig();
-    private static final SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
+    protected UiConfig webConfig = ConfigurationManager.getUiConfig();
+    protected SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
     protected TestData testData;
 
     @BeforeEach
     void setUpBase() {
+        webConfig = ConfigurationManager.getUiConfig();
+        authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
         testData = new TestData();
         SelenideLogger.addListener("allure", new AllureSelenide());
         Configuration.pageLoadStrategy = System.getProperty("selenide.pageLoadStrategy", "eager");
@@ -35,7 +37,7 @@ public class UiTestBase {
         Configuration.browserVersion = browserWithVersion[1];
         Configuration.browserSize = webConfig.browserSize();
 
-        boolean isRemote = webConfig.isRemote();
+        boolean isRemote = Boolean.getBoolean("isRemote");
         if (isRemote) {
             String remoteUrl = webConfig.remoteUrl();
             Configuration.remote = "https://" + authSelenoidConfig.getRemoteUsername() + ":" + authSelenoidConfig.getRemotePassword() + "@" + remoteUrl + "/wd/hub";
