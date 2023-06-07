@@ -105,8 +105,8 @@ ui.isRemote=Запуск_на_удаленном_хосте
 ### Скриншоты 
 
 <p>  
-    <img src=".github/sc/jenkins1.png" width="600" style="display:inline;"/> 
-    <img src=".github/sc/jenkins2.png" width="200" style="display:inline;"/>  
+    <img src=".github/sc/jenkins1.png" width="700" style="display:inline;"/> 
+    <img src=".github/sc/jenkins2.png" width="230" style="display:inline;"/>  
 </p>
 
 <p >  
