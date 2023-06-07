@@ -21,7 +21,7 @@ public class UploadFileRepositoryTest extends ApiTestBase {
     private TestData testData;
 
     @BeforeEach
-    void setUpTest(){
+    void setUpTest() {
         apiSpecification = new ApiSpecification();
         testData = new TestData();
     }

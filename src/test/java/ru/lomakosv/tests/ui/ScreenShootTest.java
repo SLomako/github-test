@@ -51,7 +51,7 @@ public class ScreenShootTest extends UiTestBase {
     @Owner("SLomako")
     @DisplayName("Тест: Скриншот тела формы входа")
     @Test
-    void testLoginBody(){
+    void testLoginBody() {
         String screenshotName = "login";
         String expectedScreenshotPath = PathScreenShot.getExpectedScreenshotPath(screenshotName);
         String actualScreenshotPath = PathScreenShot.getActualScreenshotPath(screenshotName);

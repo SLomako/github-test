@@ -35,7 +35,7 @@ public class AssertScreenShootUtil {
         ImageDiffer imageDiffer = new ImageDiffer();
         ImageDiff diff = imageDiffer.makeDiff(img1, img2);
 
-        if(diff.hasDiff()) {
+        if (diff.hasDiff()) {
             ImageIO.write(diff.getMarkedImage(), "PNG", new File(diffImagePath));
             Assertions.fail("Изображения не идентичны");
         }

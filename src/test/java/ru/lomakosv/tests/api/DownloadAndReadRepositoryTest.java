@@ -25,7 +25,7 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
     private TestData testData;
 
     @BeforeEach
-    void setUpTest(){
+    void setUpTest() {
         apiSpecification = new ApiSpecification();
         testData = new TestData();
     }
@@ -69,7 +69,7 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
     @Owner("SLomako")
     @DisplayName("Тест: Список репозиториев пользователя")
     @Test
-    void testListOfUserRepositories () {
+    void testListOfUserRepositories() {
         Response response = given(apiSpecification.getRequestSpec())
                 .when()
                 .get("users/SLomako/repos")

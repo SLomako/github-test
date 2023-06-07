@@ -46,14 +46,14 @@ public class UnauthenticatedTests extends UiTestBase {
     @DisplayName("Тест: Поиск на главной странице")
     void testSearch() {
         step("Открыть главную страницу", () ->
-            mainPage.openPage());
+                mainPage.openPage());
 
         step("Выполнить поиск", () ->
-            mainPage.search(testData.getSearchRepo()));
+                mainPage.search(testData.getSearchRepo()));
 
         step("Проверить результаты поиска", () ->
-            assertThat(searchPage.isSearchResultDisplayed(testData.getSearchResult())))
-                    .isTrue();
+                assertThat(searchPage.isSearchResultDisplayed(testData.getSearchResult())))
+                .isTrue();
     }
 
     @Owner("SLomako")
@@ -62,19 +62,19 @@ public class UnauthenticatedTests extends UiTestBase {
     @DisplayName("Тест: Расширенный поиск")
     void testAdvancedSearch() {
         step("Открыть страницу расширенного поиска", () ->
-            searchPage.openAdvancedSearch());
+                searchPage.openAdvancedSearch());
 
         step("Выбрать язык поиска", () ->
-            searchPage.clickSearchLanguage()
-                    .selectSearchLanguage(testData.getAdvancedSearchLanguage()));
+                searchPage.clickSearchLanguage()
+                        .selectSearchLanguage(testData.getAdvancedSearchLanguage()));
 
         step("Установить параметры поиска", () ->
-            searchPage.setSearchFrom(testData.getAdvancedSearchFrom())
-                    .setSearchDate(testData.getAdvancedSearchDate())
-                    .submitAdvancedSearch());
+                searchPage.setSearchFrom(testData.getAdvancedSearchFrom())
+                        .setSearchDate(testData.getAdvancedSearchDate())
+                        .submitAdvancedSearch());
 
         step("Проверить результаты поиска", () ->
-            assertThat(searchPage.isSearchResultDisplayed(testData.getSearchResult()))
-                    .isTrue());
+                assertThat(searchPage.isSearchResultDisplayed(testData.getSearchResult()))
+                        .isTrue());
     }
 }

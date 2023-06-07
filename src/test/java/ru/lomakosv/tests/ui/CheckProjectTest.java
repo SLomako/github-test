@@ -48,7 +48,7 @@ public class CheckProjectTest extends UiTestBase {
     @DisplayName("Тест: Поиск в скачанном файле")
     @ParameterizedTest(name = "ключевых слов {0}")
     @MethodSource("parameterizedTestData")
-    void testSearchInDownloadedFile (List<String> parameterizedTestData) throws IOException {
+    void testSearchInDownloadedFile(List<String> parameterizedTestData) throws IOException {
         steps.openMainPage(testData.getRepoUnderTest());
         steps.clickCodeButton();
 
@@ -56,8 +56,9 @@ public class CheckProjectTest extends UiTestBase {
         File outputFile = uiZipProcessor.processZipFile(inputZip);
 
         step("Проверить содержимое скачанного файла", () -> {
-        ContentChecker contentChecker = new ContentChecker(outputFile, parameterizedTestData);
-        contentChecker.assertThatAllFound();  });
+            ContentChecker contentChecker = new ContentChecker(outputFile, parameterizedTestData);
+            contentChecker.assertThatAllFound();
+        });
     }
 
     @Severity(SeverityLevel.CRITICAL)
@@ -73,7 +74,8 @@ public class CheckProjectTest extends UiTestBase {
 
         step("Проверить содержимое скачанного файла", () -> {
             ConsecutiveEmptyLines cel = new ConsecutiveEmptyLines();
-        boolean isConsecutiveEmptyLinesValid = cel.assertEmptyLines(outputFile, 3);
-        assertThat(isConsecutiveEmptyLinesValid).isTrue();});
+            boolean isConsecutiveEmptyLinesValid = cel.assertEmptyLines(outputFile, 3);
+            assertThat(isConsecutiveEmptyLinesValid).isTrue();
+        });
     }
 }

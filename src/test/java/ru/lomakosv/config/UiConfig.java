@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:config/test.properties",
-        "system:properties",
+        "system:properties"
 })
 public interface UiConfig extends Config {
 
