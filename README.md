@@ -104,20 +104,20 @@ ui.isRemote=Запуск_на_удаленном_хосте
 
 ### Скриншоты 
 
-<p align="center">  
+<p>  
     <img src=".github/sc/jenkins1.png" width="600" style="display:inline;"/> 
     <img src=".github/sc/jenkins2.png" width="200" style="display:inline;"/>  
 </p>
 
-<p align="center">  
+<p >  
     <img src=".github/sc/allureLocal2.png" width="600" style="display:inline;"/> 
-    <img src=".github/sc/allureLocal1.png" width="200" style="display:inline;"/>  
+    <img src=".github/sc/allureLocal.png" width="200" style="display:inline;"/>  
 </p>
 
-<p align="center">  
+<p >  
     <img src=".github/sc/allureTestOps1.png" width="600"/> 
     <br>
-    <img src=".github/sc/allureTestOps2.png" width="200"/>  
+    <img src=".github/sc/allureTestOps2.png" width="600"/>  
 </p>
 
 
