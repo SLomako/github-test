@@ -2,6 +2,15 @@
 
 ## Описание проекта
 
+[<img src=".github/logo/java.png" alt="java_8" width="100" height="100"/>](https://www.oracle.com/ru/java/technologies/javase-jre8-downloads.html)
+[<img src=".github/logo/junit_5.png" alt="junit_5" width="100" height="100"/>](https://junit.org/junit5/)
+[<img src=".github/logo/selenide.png" alt="selenide" width="100" height="100"/>](https://ru.selenide.org/)
+[<img src=".github/logo/gradle.png" alt="gradle" width="100" height="100"/>](https://gradle.org/)
+[<img src=".github/logo/allure.png" alt="allure" width="100" height="100"/>](https://docs.qameta.io/allure/)
+<img src=".github/logo/telegram.png" alt="telegram" width="100" height="100"/>
+[<img src=".github/logo/jenkins.png" alt="jenkins" width="100" height="100"/>](https://www.jenkins.io/)
+[<img src=".github/logo/selenoid.png" alt="selenoid" width="100" height="100"/>](https://aerokube.com/selenoid/latest/)
+
 Проект представляет собой набор автоматизированных тестов, включающих API- и UI-тесты. Он разделен на следующие модули:
 
 API-тесты:
@@ -91,3 +100,6 @@ ui.baseURL=Базовый_URL
 ui.remoteURL=URL_удаленного_хоста
 ui.isRemote=Запуск_на_удаленном_хосте
 ```
+
+
+[![Telegram](.github/logo/telegram1.svg)](https://t.me/lom14)
