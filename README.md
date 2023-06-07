@@ -114,6 +114,12 @@ ui.isRemote=Запуск_на_удаленном_хосте
     <img src=".github/sc/allureLocal1.png" width="200" style="display:inline;"/>  
 </p>
 
+<p align="center">  
+    <img src=".github/sc/allureTestOps1.png" width="600"/> 
+    <br>
+    <img src=".github/sc/allureTestOps2.png" width="200"/>  
+</p>
+
 
 
 
