@@ -2,13 +2,13 @@
 
 ## Описание проекта
 
-[<img src=".github/logo/java.png" alt="java_8" width="70" height="70"/>](https://www.oracle.com/ru/java/technologies/javase-jre8-downloads.html)
-[<img src=".github/logo/junit_5.png" alt="junit_5" width="70" height="70"/>](https://junit.org/junit5/)
-[<img src=".github/logo/selenide.png" alt="selenide" width="70" height="70"/>](https://ru.selenide.org/)
-[<img src=".github/logo/gradle.png" alt="gradle" width="70" height="70"/>](https://gradle.org/)
-[<img src=".github/logo/allure.png" alt="allure" width="70" height="70"/>](https://docs.qameta.io/allure/)
-[<img src=".github/logo/jenkins.png" alt="jenkins" width="70" height="70"/>](https://www.jenkins.io/)
-[<img src=".github/logo/selenoid.png" alt="selenoid" width="70" height="70"/>](https://aerokube.com/selenoid/latest/)
+[<img src=".github/logo/java.png" alt="java_8" width="85" height="85"/>](https://www.oracle.com/ru/java/technologies/javase-jre8-downloads.html)
+[<img src=".github/logo/junit_5.png" alt="junit_5" width="85" height="85"/>](https://junit.org/junit5/)
+[<img src=".github/logo/selenide.png" alt="selenide" width="85" height="85"/>](https://ru.selenide.org/)
+[<img src=".github/logo/gradle.png" alt="gradle" width="85" height="85"/>](https://gradle.org/)
+[<img src=".github/logo/allure.png" alt="allure" width="85" height="85"/>](https://docs.qameta.io/allure/)
+[<img src=".github/logo/jenkins.png" alt="jenkins" width="85" height="85"/>](https://www.jenkins.io/)
+[<img src=".github/logo/selenoid.png" alt="selenoid" width="85" height="85"/>](https://aerokube.com/selenoid/latest/)
 
 Проект представляет собой набор автоматизированных тестов, включающих API- и UI-тесты. Он разделен на следующие модули:
 
