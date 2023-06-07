@@ -104,19 +104,38 @@ ui.isRemote=Запуск_на_удаленном_хосте
 
 ### Скриншоты 
 
+<details>
+  <summary>##### IntelliJ IDEA</summary>
+
 ![Image1](.github/sc/idea.png)
+</details>
+
+<details>
+  <summary>##### Jenkins</summary>
 
 ![Image2](.github/sc/jenkins1.png)
 ![Image3](.github/sc/jenkins2.png)
+</details>
+
+<details>
+  <summary>##### AllureReport</summary>
 
 ![Image4](.github/sc/allureLocal2.png)
 ![Image5](.github/sc/allureLocal.png)
+</details>
+
+<details>
+  <summary>##### AllureTestOps</summary>
 
 ![Image6](.github/sc/allureTestOps1.png)
 ![Image7](.github/sc/allureTestOps2.png)
+</details>
+
+<details>
+  <summary>##### Уведомление Telegram</summary>
 
 ![Image9](.github/sc/telegram.png)
-
+</details>
 
 
 
