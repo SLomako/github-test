@@ -102,5 +102,14 @@ ui.remoteURL=URL_удаленного_хоста
 ui.isRemote=Запуск_на_удаленном_хосте
 ```
 
+### Скриншоты 
+
+<p align="center">  
+    <img src=".github/sc/jenkins1.png" width="350" style="display:inline;"/> 
+    <img src=".github/sc/jenkins2.png" width="115" style="display:inline;"/>  
+</p>
+
+
+
 
 [![Telegram](.github/logo/telegram1.svg)](https://t.me/lom14)
