@@ -1,6 +1,9 @@
-# github-tester
+## github-tester
 
-## Описание проекта
+### Описание проекта
+
+Проект GitHub Tester - это автоматизированный набор тестов для проверки функциональности и надежности GitHub.
+Он включает в себя API-тесты для взаимодействия с GitHub API и UI-тесты для проверки пользовательского интерфейса.
 
 [<img src=".github/logo/java.png" alt="java_8" width="85" height="85"/>](https://www.oracle.com/ru/java/technologies/javase-jre8-downloads.html)
 [<img src=".github/logo/junit_5.png" alt="junit_5" width="85" height="85"/>](https://junit.org/junit5/)
