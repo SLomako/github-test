@@ -102,18 +102,16 @@ ui.remoteURL=URL_удаленного_хоста
 ui.isRemote=Запуск_на_удаленном_хосте
 ```
 
-### Скриншоты 
-
-Визуализация процесса тестирования
+### Визуализация процесса тестирования
 
 Ниже представлены скриншоты основных инструментов и процессов, используемых в ходе разработки и тестирования проекта. Вы можете развернуть каждый раздел, чтобы увидеть подробности.
 
 <details>
-  <summary>IntelliJ IDEA</summary>
+  <summary>#### IntelliJ IDEA</summary>
 ![Image1](.github/sc/idea.png)
 </details>
 <details>
-  <summary>Jenkins</summary>
+  <summary>#### Jenkins</summary>
 ![Image2](.github/sc/jenkins1.png)
 ![Image3](.github/sc/jenkins2.png)
 </details>
