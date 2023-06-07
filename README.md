@@ -115,7 +115,6 @@ ui.isRemote=Запуск_на_удаленном_хосте
 
 ![Image1](.github/sc/idea.png)
 </details>
-
 <details>
   <summary>Jenkins</summary>
 
@@ -124,7 +123,6 @@ ui.isRemote=Запуск_на_удаленном_хосте
 ![Image2](.github/sc/jenkins1.png)
 ![Image3](.github/sc/jenkins2.png)
 </details>
-
 <details>
   <summary>AllureReport</summary>
 
@@ -133,7 +131,6 @@ ui.isRemote=Запуск_на_удаленном_хосте
 ![Image4](.github/sc/allureLocal2.png)
 ![Image5](.github/sc/allureLocal.png)
 </details>
-
 <details>
   <summary>AllureTestOps</summary>
 
@@ -142,19 +139,16 @@ ui.isRemote=Запуск_на_удаленном_хосте
 ![Image6](.github/sc/allureTestOps1.png)
 ![Image7](.github/sc/allureTestOps2.png)
 </details>
-
 <details>
   <summary>Уведомление Telegram</summary>
 
 ![Image9](.github/sc/telegram.png)
 </details>
-
 <details>
  <summary>Демонстрационное видео запуска тестов через AllureTestOps</summary>
 
 <iframe src=".github/video/allure-testops-google-chrome.mp4"></iframe> 
 </details>
-
 
 ### Контакты
 
