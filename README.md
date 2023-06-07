@@ -1,4 +1,4 @@
-# GitHub_Tester
+# github-tester
 
 ## Описание проекта
 
@@ -81,7 +81,7 @@ gradle clean test -DisRemote=true
 - `BASE_URL` - окружение (например, "https://github.com").
 - `BROWSER_AND_VERSION` - браузер и версия в Selenoid (например, "chrome,100.0").
 - `BROWSER_SIZE` - разрешение экрана (например, "1920x1080").
-- `REPO_UNDER_TEST` - выбор репозитория для проверки требований к проекту (например, "SLomako/GitHub_Tester").
+- `REPO_UNDER_TEST` - выбор репозитория для проверки требований к проекту (например, "SLomako/github-tester").
 
 ### Файл test.properties
 
