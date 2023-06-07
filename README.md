@@ -152,7 +152,9 @@ ui.isRemote=Запуск_на_удаленном_хосте
 <details>
   <summary>Демонстрационное видео запуска тестов через AllureTestOps</summary>
 
-[Смотреть демонстрационное видео](.github/video/allure-testops-google-chrome.mp4)
+<div align="center">
+  <video src=".github/video/allure-testops-google-chrome.mp4" width="400" />
+</div>
 
 </details>
 
