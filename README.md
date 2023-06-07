@@ -19,16 +19,16 @@ API-тесты:
 
 1. **CreationRepositoryTest** - cоздания репозитория.
     - `testCreateRepository()`: cоздания репозитория.
-    - `testCreateRepositoryWithExistingName()`: cоздания репозитория с уже существующим именем.
+    - `testCreateRepositoryWithExistingName`: cоздания репозитория с уже существующим именем.
 2. **DownloadAndReadRepositoryTest** - cкачивания и чтения содержимого репозитория.
-    - `testDownloadAndReadFileContentFromZipReadme()`: cкачивания и чтения содержимого файла README из ZIP-архива.
-    - `testDownloadAndReadNonexistentFileFromZip()`: cкачивания и чтения содержимого несуществующего файла из ZIP-архива.
+    - `testDownloadAndReadFileContentFromZipReadme`: cкачивания и чтения содержимого файла README из ZIP-архива.
+    - `testDownloadAndReadNonexistentFileFromZip`: cкачивания и чтения содержимого несуществующего файла из ZIP-архива.
 3. **ListOfUserRepositoriesTest** - получения списка репозиториев пользователя.
-    - `testListOfUserRepositories()`: список репозиториев пользователя.
+    - `testListOfUserRepositories`: список репозиториев пользователя.
 4. **RenameRepositoryTest** - переименования репозитория.
-    - `renameRepository()`: успешное переименования репозитория.
+    - `renameRepository`: успешное переименования репозитория.
 5. **UploadFileRepositoryTest** - загрузки файла в репозиторий.
-    - `UploadFileTest()`: успешная загрузки файла в репозиторий.
+    - `UploadFileTest`: успешная загрузки файла в репозиторий.
 
 UI-тесты:
 
@@ -53,13 +53,12 @@ UI-тесты:
 
 - `selenide.pageLoadStrategy` - стратегия загрузки страницы (по умолчанию "eager").
 - `ownerName` - имя владельца репозитория (по умолчанию "SLomako").
-- `repoUnderTest` - репозиторий для тестирования (по умолчанию "SLomako/GitHub_Tester").
-- `searchRepo` - репозиторий для поиска (по умолчанию "SLomako/GitHub_Tester").
-- `searchResult` - ожидаемый результат поиска (по умолчанию "GitHub_Tester").
+- `repoUnderTest` - репозиторий для тестирования (по умолчанию "SLomako/github-tester").
+- `searchRepo` - репозиторий для поиска (по умолчанию "SLomako/github-tester").
+- `searchResult` - ожидаемый результат поиска (по умолчанию "github-tester").
 - `advancedSearchLanguage` - язык для расширенного поиска (по умолчанию "Java").
 - `advancedSearchFrom` - источник для расширенного поиска (по умолчанию "Slomako").
 - `advancedSearchDate` - дата для расширенного поиска (по умолчанию "2023").
-- `isRemote` - для запуска тестов на удаленной машине (по умолчанию `false`).
 
 ### Локальный запуск
 
