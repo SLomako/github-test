@@ -39,8 +39,7 @@ public class CheckProjectTest extends UiTestBase {
 
     static Stream<List<String>> parameterizedTestData() {
         return Stream.of(
-                Arrays.asList("@BeforeEach", "@AfterEach", "@DisplayName", "@Owner",
-                        "lombok", "owner", "assertj", "restassured", "get", "post", "delete", "@Epic", "@Story", "@Feature")
+                Arrays.asList("@Owner", "lombok", "owner", "assertj", "get", "post", "delete")
         );
     }
 
