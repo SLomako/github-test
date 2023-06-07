@@ -7,7 +7,6 @@
 [<img src=".github/logo/selenide.png" alt="selenide" width="100" height="100"/>](https://ru.selenide.org/)
 [<img src=".github/logo/gradle.png" alt="gradle" width="100" height="100"/>](https://gradle.org/)
 [<img src=".github/logo/allure.png" alt="allure" width="100" height="100"/>](https://docs.qameta.io/allure/)
-<img src=".github/logo/telegram.png" alt="telegram" width="100" height="100"/>
 [<img src=".github/logo/jenkins.png" alt="jenkins" width="100" height="100"/>](https://www.jenkins.io/)
 [<img src=".github/logo/selenoid.png" alt="selenoid" width="100" height="100"/>](https://aerokube.com/selenoid/latest/)
 
