@@ -14,7 +14,7 @@ import ru.lomakosv.utils.PathScreenShot;
 
 import static io.qameta.allure.Allure.step;
 
-@Feature("UI: Скриншоты страниц")
+@Feature("UI-тестирование")
 @Story("Проверка скриншотов страниц")
 @DisplayName("UI: Скриншоты страниц")
 public class ScreenShootTest extends UiTestBase {

@@ -12,9 +12,8 @@ import ru.lomakosv.tests.ui.pages.SearchPage;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Tag("remote")
 @Epic("Неаутентифицированные пользователи")
-@Feature("UI: Неаутентифицированные тесты")
+@Feature("UI-тестирование")
 @DisplayName("UI: Неаутентифицированные тесты")
 public class UnauthenticatedTests extends UiTestBase {
 

@@ -1,6 +1,7 @@
 package ru.lomakosv.tests.api;
 
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,6 +17,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("API-тестирование")
 @DisplayName("API: Чтение и Скачивание содержимого репозитория")
 public class DownloadAndReadRepositoryTest extends ApiTestBase {
 

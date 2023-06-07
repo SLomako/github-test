@@ -1,5 +1,6 @@
 package ru.lomakosv.tests.api;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +12,7 @@ import ru.lomakosv.tests.api.model.PatchRepositoryRequest;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("API-тестирование")
 @DisplayName("API: Переименование репозитория")
 public class RenameRepositoryTest extends ApiTestBase {
 

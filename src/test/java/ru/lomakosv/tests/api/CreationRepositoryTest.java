@@ -1,5 +1,6 @@
 package ru.lomakosv.tests.api;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,6 +13,7 @@ import ru.lomakosv.tests.api.model.CreationRepositoryResponse;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("API-тестирование")
 @DisplayName("API: Создание репозитория")
 public class CreationRepositoryTest {
 

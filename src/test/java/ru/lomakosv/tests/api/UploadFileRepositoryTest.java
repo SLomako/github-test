@@ -1,5 +1,6 @@
 package ru.lomakosv.tests.api;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,7 @@ import ru.lomakosv.utils.Base64Converter;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("API-тестирование")
 @DisplayName("API: Загрузка файла в репозиторий")
 public class UploadFileRepositoryTest extends ApiTestBase {
 
