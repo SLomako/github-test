@@ -105,7 +105,7 @@ ui.remoteURL=URL_удаленного_хоста
 ui.isRemote=Запуск_на_удаленном_хосте
 ```
 
-### Визуализация процесса тестирования
+### Ссылки и визуализация
 
 Ниже представлены скриншоты основных инструментов и процессов, используемых в ходе разработки и тестирования проекта. Вы
 можете развернуть каждый раздел, чтобы увидеть подробности.
@@ -119,6 +119,8 @@ ui.isRemote=Запуск_на_удаленном_хосте
 <details>
   <summary>Jenkins</summary>
 
+[Перейти к сборке в Jenkins](https://jenkins.autotests.cloud/job/18-lom14-github-tester)
+
 ![Image2](.github/sc/jenkins1.png)
 ![Image3](.github/sc/jenkins2.png)
 </details>
@@ -126,12 +128,16 @@ ui.isRemote=Запуск_на_удаленном_хосте
 <details>
   <summary>AllureReport</summary>
 
+[Перейти к отчету в AllureReport](https://jenkins.autotests.cloud/job/18-lom14-github-tester/12/allure)
+
 ![Image4](.github/sc/allureLocal2.png)
 ![Image5](.github/sc/allureLocal.png)
 </details>
 
 <details>
   <summary>AllureTestOps</summary>
+
+[Перейти к отчету AllureTestOps](https://allure.autotests.cloud/project/3349/dashboards)
 
 ![Image6](.github/sc/allureTestOps1.png)
 ![Image7](.github/sc/allureTestOps2.png)
@@ -142,6 +148,13 @@ ui.isRemote=Запуск_на_удаленном_хосте
 
 ![Image9](.github/sc/telegram.png)
 </details>
+
+<details>
+ <summary>Демонстрационное видео запуска тестов через AllureTestOps</summary>
+
+<iframe src=".github/video/allure-testops-google-chrome.mp4"></iframe> 
+</details>
+
 
 ### Контакты
 
