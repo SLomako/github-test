@@ -9,7 +9,7 @@ public class TestData {
             ownerName = System.getProperty("ownerName", "SLomako"),
             repoUnderTest = System.getProperty("repoUnderTest", "SLomako/github-tester"),
             searchRepo = System.getProperty("searchRepo", "SLomako/github-tester"),
-            searchResult = System.getProperty("searchResult", "github-tester"),
+            searchResult = System.getProperty("searchResult", "SLomako/github-tester"),
             advancedSearchLanguage = System.getProperty("advancedSearchLanguage", "Java"),
             advancedSearchFrom = System.getProperty("advancedSearchFrom", "Slomako"),
             advancedSearchDate = System.getProperty("advancedSearchDate", "2023"),

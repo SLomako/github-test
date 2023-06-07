@@ -58,7 +58,7 @@ test {
     def threads = System.getProperty('threads', '2')
     def maxPoolSize = System.getProperty('maxPoolSize', '2')
 
-    systemProperties.'junit.jupiter.execution.parallel.enabled' = 'false'
+    systemProperties.'junit.jupiter.execution.parallel.enabled' = 'true'
     systemProperties.'junit.jupiter.execution.parallel.mode.default' = 'concurrent'
     systemProperties.'junit.jupiter.execution.parallel.mode.classes.default' = 'concurrent'
     systemProperties.'junit.jupiter.execution.parallel.config.strategy' = 'fixed'
