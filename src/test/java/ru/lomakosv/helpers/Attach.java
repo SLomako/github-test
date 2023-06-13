@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sessionId;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
@@ -20,11 +21,11 @@ public class Attach extends UiTestBase {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-//    @Attachment(value = "{attachName}", type = "image/png")
-//    public static byte[] screenshotFromBrowser(String attachName, String ownerName, String repositoryName) {
-//            open(String.format("https://github.com/%s/%s", ownerName, repositoryName));
-//        return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
-//    }
+    @Attachment(value = "{attachName}", type = "image/png")
+    public static byte[] screenshotFromBrowser(String attachName, String ownerName, String repositoryName) {
+            open(String.format("https://github.com/%s/%s", ownerName, repositoryName));
+        return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
+    }
 
     @Attachment(value = "Page source", type = "text/plain")
     public static byte[] pageSource() {

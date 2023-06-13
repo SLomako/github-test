@@ -23,6 +23,8 @@ public class UiTestBase {
     protected UiConfig webConfig = ConfigurationManager.getUiConfig();
     protected SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
     protected TestData testData;
+    protected boolean isRemote = Boolean.getBoolean("isRemote");
+
 
     @BeforeEach
     void setUpBase() {
@@ -37,7 +39,6 @@ public class UiTestBase {
         Configuration.browserVersion = browserWithVersion[1];
         Configuration.browserSize = webConfig.browserSize();
 
-        boolean isRemote = Boolean.getBoolean("isRemote");
         if (isRemote) {
             String remoteUrl = webConfig.remoteUrl();
             Configuration.remote = "https://" + authSelenoidConfig.getRemoteUsername() + ":" + authSelenoidConfig.getRemotePassword() + "@" + remoteUrl + "/wd/hub";
@@ -52,7 +53,9 @@ public class UiTestBase {
 
     @AfterEach
     void tearDownBase() {
-        Attach.addVideo();
+        if (isRemote) {
+            Attach.addVideo();
+        }
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.screenshotAs("Last screenshot");
