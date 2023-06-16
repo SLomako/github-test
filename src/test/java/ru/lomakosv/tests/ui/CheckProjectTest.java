@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import ru.lomakosv.data.TestData;
-import ru.lomakosv.tests.ui.steps.Steps;
+import ru.lomakosv.tests.ui.steps.RepositoryActionsSteps;
 import ru.lomakosv.utils.ConsecutiveEmptyLines;
 import ru.lomakosv.utils.ContentChecker;
 import ru.lomakosv.utils.UiZipProcessor;
@@ -28,13 +28,13 @@ public class CheckProjectTest extends UiTestBase {
 
     private UiZipProcessor uiZipProcessor;
     private TestData testData;
-    private Steps steps;
+    private RepositoryActionsSteps steps;
 
     @BeforeEach
     void setUpTest() {
         uiZipProcessor = new UiZipProcessor();
         testData = new TestData();
-        steps = new Steps();
+        steps = new RepositoryActionsSteps();
     }
 
     static Stream<List<String>> parameterizedTestData() {

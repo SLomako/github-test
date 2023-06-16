@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class Steps {
+public class RepositoryActionsSteps {
 
     @Step("Открываем страницу репозитория {searchQuery}")
     public void openMainPage(String searchQuery) {
@@ -22,8 +22,6 @@ public class Steps {
 
     @Step("Нажать кнопку 'Download ZIP'")
     public File clickDownloadZipButton() throws FileNotFoundException {
-
         return $("[href*='.zip']").download();
     }
-
 }
