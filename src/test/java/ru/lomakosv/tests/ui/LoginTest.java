@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.config.ApiConfig;
 import ru.lomakosv.config.ConfigurationManager;
-import ru.lomakosv.helpers.Annotations.LocalTestExtensions;
+import ru.lomakosv.helpers.annotations.LocalTestExtensions;
 import ru.lomakosv.tests.ui.pages.LoginPage;
 
 import static io.qameta.allure.Allure.step;

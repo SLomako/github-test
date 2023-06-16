@@ -5,7 +5,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.*;
 import ru.lomakosv.data.TestData;
-import ru.lomakosv.helpers.Annotations.Blocker;
+import ru.lomakosv.helpers.annotations.Blocker;
 import ru.lomakosv.tests.ui.pages.MainPage;
 import ru.lomakosv.tests.ui.pages.SearchPage;
 

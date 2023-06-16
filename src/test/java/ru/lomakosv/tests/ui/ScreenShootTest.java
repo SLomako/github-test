@@ -5,7 +5,7 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.lomakosv.helpers.Annotations.Critical;
+import ru.lomakosv.helpers.annotations.Critical;
 import ru.lomakosv.tests.ui.pages.LoginPage;
 import ru.lomakosv.tests.ui.pages.MainPage;
 import ru.lomakosv.utils.AssertScreenShootUtil;

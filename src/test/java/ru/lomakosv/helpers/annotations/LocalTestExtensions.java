@@ -1,4 +1,4 @@
-package ru.lomakosv.helpers.Annotations;
+package ru.lomakosv.helpers.annotations;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.ExecutionCondition;
