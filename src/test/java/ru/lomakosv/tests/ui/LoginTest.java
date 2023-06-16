@@ -35,7 +35,7 @@ public class LoginTest extends UiTestBase {
     @Test
     void testSuccessfulLogin() {
         step("Открыть страницу входа", () ->
-                loginPage.openLoginPage());
+                loginPage.openLoginPage(testData.getUrlLoginPage()));
 
         step("Ввести логин", () ->
                 loginPage.enterLogin(apiConfig.getGitHubLogin()));
@@ -60,7 +60,7 @@ public class LoginTest extends UiTestBase {
     @Test
     void testLoginWithInvalidEmail() {
         step("Открыть страницу входа", () ->
-                loginPage.openLoginPage());
+                loginPage.openLoginPage(testData.getUrlLoginPage()));
 
         step("Ввести недопустимый email", () ->
                 loginPage.enterLogin("invalidEmail"));
@@ -81,7 +81,7 @@ public class LoginTest extends UiTestBase {
     @Test
     void testLoginWithInvalidPassword() {
         step("Открыть страницу входа", () ->
-                loginPage.openLoginPage());
+                loginPage.openLoginPage(testData.getUrlLoginPage()));
 
         step("Ввести логин", () ->
                 loginPage.enterLogin(apiConfig.getGitHubLogin()));

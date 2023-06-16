@@ -17,8 +17,8 @@ public class LoginPage {
             usernameElement = $(".css-truncate-target"),
             alertElement = $(".js-flash-alert");
 
-    public LoginPage openLoginPage() {
-        open("https://github.com/login");
+    public LoginPage openLoginPage(String urlLoginPage) {
+        open(urlLoginPage);
         return this;
     }
 

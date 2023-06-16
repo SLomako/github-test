@@ -11,6 +11,7 @@ import ru.lomakosv.tests.ui.pages.MainPage;
 import ru.lomakosv.utils.AssertScreenShootUtil;
 import ru.lomakosv.utils.PathScreenShot;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 
 @Feature("UI-тестирование")
@@ -39,7 +40,7 @@ public class ScreenShootTest extends UiTestBase {
         String diffImagePath = PathScreenShot.getDiffImagePath(screenshotName);
 
         step("Открыть главную страницу", () ->
-                mainPage.openPage());
+                mainPage.openPage(baseUrl));
 
         step("Сделать скриншот заголовка главной страницы", () ->
                 step("Проверка идентичности скриншотов", () ->
@@ -58,7 +59,7 @@ public class ScreenShootTest extends UiTestBase {
         String diffImagePath = PathScreenShot.getDiffImagePath(screenshotName);
 
         step("Открыть страницу входа", () ->
-                loginPage.openLoginPage());
+                loginPage.openLoginPage(testData.getUrlLoginPage()));
 
         step("Нажать на заголовок формы входа", () ->
                 loginPage.clickLoginFormHeader());

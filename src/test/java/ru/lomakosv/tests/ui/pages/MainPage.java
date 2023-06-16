@@ -11,8 +11,8 @@ public class MainPage {
             pageTitleElement = $("head > title"),
             headerElement = $("[class*=Header-old]");
 
-    public void openPage() {
-        open("https://github.com");
+    public void openPage(String baseUrl) {
+        open(baseUrl);
     }
 
     public void search(String text) {

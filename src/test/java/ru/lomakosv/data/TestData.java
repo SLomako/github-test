@@ -13,6 +13,8 @@ public class TestData {
             advancedSearchLanguage = System.getProperty("advancedSearchLanguage", "Java"),
             advancedSearchFrom = System.getProperty("advancedSearchFrom", "Slomako"),
             advancedSearchDate = System.getProperty("advancedSearchDate", "2023"),
+            urlSearchAdvanced = "https://github.com/search/advanced",
+            urlLoginPage = "https://github.com/login",
             repositoryName = "API",
             descriptionRepository = "Тест создание репозитория через API",
             targetFileName = "README.md",

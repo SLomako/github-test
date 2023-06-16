@@ -14,8 +14,8 @@ public class SearchPage {
             searchButton = $("[type=submit]");
     private final ElementsCollection searchResultContainer = $$(".v-align-middle");
 
-    public SearchPage openAdvancedSearch() {
-        open("https://github.com/search/advanced");
+    public SearchPage openAdvancedSearch(String urlSearchAdvanced) {
+        open(urlSearchAdvanced);
         return this;
     }
 

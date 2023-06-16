@@ -9,6 +9,7 @@ import ru.lomakosv.helpers.Annotations.Blocker;
 import ru.lomakosv.tests.ui.pages.MainPage;
 import ru.lomakosv.tests.ui.pages.SearchPage;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -34,7 +35,7 @@ public class UnauthenticatedTests extends UiTestBase {
     @DisplayName("Тест: Загрузка главной страницы")
     void testMainPageLoads() {
         step("Открыть главную страницу", () ->
-                mainPage.openPage());
+                mainPage.openPage(baseUrl));
 
         step("Проверить заголовок страницы", () ->
                 Assertions.assertTrue(mainPage.getTitle().contains(testData.getPageTitle())));
@@ -46,7 +47,7 @@ public class UnauthenticatedTests extends UiTestBase {
     @DisplayName("Тест: Поиск на главной странице")
     void testSearch() {
         step("Открыть главную страницу", () ->
-                mainPage.openPage());
+                mainPage.openPage(baseUrl));
 
         step("Выполнить поиск", () ->
                 mainPage.search(testData.getSearchRepo()));
@@ -62,7 +63,7 @@ public class UnauthenticatedTests extends UiTestBase {
     @DisplayName("Тест: Расширенный поиск")
     void testAdvancedSearch() {
         step("Открыть страницу расширенного поиска", () ->
-                searchPage.openAdvancedSearch());
+                searchPage.openAdvancedSearch(testData.getUrlSearchAdvanced()));
 
         step("Выбрать язык поиска", () ->
                 searchPage.clickSearchLanguage()
