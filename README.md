@@ -89,8 +89,7 @@ gradle clean test -DisRemote=true
 
 ### Файл test.properties
 
-Для запуска тестов локально на вашем компьютере, вам необходимо добавить файл test.properties в папку ресурсов (
-test/src/resources/config/). В этом файле необходимо указать следующие свойства:
+Для запуска тестов локально на вашем компьютере, вам необходимо добавить файл test.properties в папку ресурсов (test/src/resources/config/). В этом файле необходимо указать следующие свойства:
 
 ```bash 
 login.gitHub=Ваш_логин_GitHub
