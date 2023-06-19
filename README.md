@@ -118,7 +118,7 @@ ui.isRemote=Запуск_на_удаленном_хосте
 <details>
   <summary>Jenkins</summary>
 
-[Перейти к сборке в Jenkins](https://jenkins.autotests.cloud/job/18-lom14-github-tester)
+[Перейти к сборке в Jenkins](https://jenkins.autotests.cloud/job/Students/job/18-lom14-github-tester/)
 
 ![Image2](.github/sc/jenkins1.png)
 ![Image3](.github/sc/jenkins2.png)
