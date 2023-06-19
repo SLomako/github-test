@@ -21,6 +21,7 @@ import java.util.stream.Stream;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("SLomako")
 @Epic("Проверка комплектности данных проекта")
 @Feature("UI-тестирование")
 @DisplayName("UI: Проверка наличия основных компонентов проекта")
@@ -44,7 +45,6 @@ public class CheckProjectTest extends UiTestBase {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Owner("SLomako")
     @DisplayName("Тест: Поиск в скачанном файле")
     @ParameterizedTest(name = "ключевых слов {0}")
     @MethodSource("parameterizedTestData")
@@ -62,7 +62,6 @@ public class CheckProjectTest extends UiTestBase {
     }
 
     @Severity(SeverityLevel.CRITICAL)
-    @Owner("SLomako")
     @DisplayName("Тест: Проверка на избыточные пустые строки подряд")
     @Test
     void testForEmptyStrings() throws IOException {

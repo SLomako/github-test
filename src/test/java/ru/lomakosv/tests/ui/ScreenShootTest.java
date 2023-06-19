@@ -14,6 +14,7 @@ import ru.lomakosv.utils.PathScreenShot;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 
+@Owner("SLomako")
 @Feature("UI-тестирование")
 @DisplayName("UI: Скриншоты страниц")
 public class ScreenShootTest extends UiTestBase {
@@ -30,7 +31,6 @@ public class ScreenShootTest extends UiTestBase {
     }
 
     @Critical
-    @Owner("SLomako")
     @DisplayName("Тест: Скриншот заголовка главной страницы")
     @Test
     void testMainPageHeader() {
@@ -49,7 +49,6 @@ public class ScreenShootTest extends UiTestBase {
     }
 
     @Critical
-    @Owner("SLomako")
     @DisplayName("Тест: Скриншот тела формы входа")
     @Test
     void testLoginBody() {

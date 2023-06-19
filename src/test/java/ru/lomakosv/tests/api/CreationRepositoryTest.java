@@ -13,6 +13,7 @@ import ru.lomakosv.tests.api.model.CreationRepositoryResponse;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("SLomako")
 @Feature("API-тестирование")
 @DisplayName("API: Создание репозитория")
 public class CreationRepositoryTest {
@@ -27,7 +28,6 @@ public class CreationRepositoryTest {
         testData = new TestData();
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Создание репозитория")
     @Test
     void testCreateRepository() {
@@ -60,7 +60,6 @@ public class CreationRepositoryTest {
 
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Создание репозитория с уже существующим именем")
     @Test
     void testCreateRepositoryWithExistingName() {

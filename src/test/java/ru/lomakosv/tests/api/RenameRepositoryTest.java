@@ -12,6 +12,7 @@ import ru.lomakosv.tests.api.model.PatchRepositoryRequest;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("SLomako")
 @Feature("API-тестирование")
 @DisplayName("API: Переименование репозитория")
 public class RenameRepositoryTest extends ApiTestBase {
@@ -25,7 +26,6 @@ public class RenameRepositoryTest extends ApiTestBase {
         testData = new TestData();
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Успешное переименование репозитория")
     @Test
     void renameRepository() {

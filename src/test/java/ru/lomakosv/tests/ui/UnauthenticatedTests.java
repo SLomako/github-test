@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("SLomako")
 @Epic("Неаутентифицированные пользователи")
 @Feature("UI-тестирование")
 @DisplayName("UI: Неаутентифицированные тесты")
@@ -29,7 +30,6 @@ public class UnauthenticatedTests extends UiTestBase {
         testData = new TestData();
     }
 
-    @Owner("SLomako")
     @Blocker
     @Test
     @DisplayName("Тест: Загрузка главной страницы")
@@ -41,7 +41,6 @@ public class UnauthenticatedTests extends UiTestBase {
                 Assertions.assertTrue(mainPage.getTitle().contains(testData.getPageTitle())));
     }
 
-    @Owner("SLomako")
     @Blocker
     @Test
     @DisplayName("Тест: Поиск на главной странице")
@@ -57,7 +56,6 @@ public class UnauthenticatedTests extends UiTestBase {
                 .isTrue();
     }
 
-    @Owner("SLomako")
     @Blocker
     @Test
     @DisplayName("Тест: Расширенный поиск")

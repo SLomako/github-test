@@ -17,6 +17,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("SLomako")
 @Feature("API-тестирование")
 @DisplayName("API: Чтение и Скачивание содержимого репозитория")
 public class DownloadAndReadRepositoryTest extends ApiTestBase {
@@ -30,7 +31,6 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
         testData = new TestData();
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Скачивание и чтение содержимого файла README из ZIP-архива")
     @Test
     void testDownloadAndReadFileContentFromZipReadme() throws IOException {
@@ -49,7 +49,6 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
                 .contains(repositoryName);
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Скачивание и чтение содержимого несуществующего файла из ZIP-архива")
     @Test
     void testDownloadAndReadNonexistentFileFromZip() throws IOException {
@@ -66,7 +65,6 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
         assertThat(fileContent).isEqualTo("Файл nonexistent-file.txt не найден в ZIP-архиве");
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Список репозиториев пользователя")
     @Test
     void testListOfUserRepositories() {

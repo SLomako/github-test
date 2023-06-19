@@ -13,6 +13,7 @@ import ru.lomakosv.utils.Base64Converter;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Owner("SLomako")
 @Feature("API-тестирование")
 @DisplayName("API: Загрузка файла в репозиторий")
 public class UploadFileRepositoryTest extends ApiTestBase {
@@ -26,7 +27,6 @@ public class UploadFileRepositoryTest extends ApiTestBase {
         testData = new TestData();
     }
 
-    @Owner("SLomako")
     @DisplayName("Тест: Успешная загрузка файла")
     @Test
     void UploadFileTest() {

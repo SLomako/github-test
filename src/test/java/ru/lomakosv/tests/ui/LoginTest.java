@@ -13,6 +13,7 @@ import ru.lomakosv.tests.ui.pages.LoginPage;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("SLomako")
 @Epic("Авторизация")
 @Feature("UI-тестирование")
 @DisplayName("UI: Авторизация")
@@ -30,7 +31,6 @@ public class LoginTest extends UiTestBase {
 
     @Severity(SeverityLevel.BLOCKER)
     @LocalTestExtensions.LocalTest
-    @Owner("SLomako")
     @DisplayName("Тест: Успешный вход в систему")
     @Test
     void testSuccessfulLogin() {
@@ -55,7 +55,6 @@ public class LoginTest extends UiTestBase {
 
     @Severity(SeverityLevel.CRITICAL)
     @LocalTestExtensions.LocalTest
-    @Owner("SLomako")
     @DisplayName("Тест: Вход в систему с недопустимым email")
     @Test
     void testLoginWithInvalidEmail() {
