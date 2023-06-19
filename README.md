@@ -127,7 +127,7 @@ ui.isRemote=Запуск_на_удаленном_хосте
 <details>
   <summary>AllureReport</summary>
 
-[Перейти к отчету в AllureReport](https://jenkins.autotests.cloud/job/18-lom14-github-tester/12/allure)
+[Перейти к отчету в AllureReport](https://jenkins.autotests.cloud/job/Students/job/18-lom14-github-tester/)
 
 ![Image4](.github/sc/allureLocal2.png)
 ![Image5](.github/sc/allureLocal.png)
