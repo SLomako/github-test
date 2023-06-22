@@ -19,7 +19,7 @@ public class ApiSpecification {
     private ApiConfig apiConfig = ConfigurationManager.getApiConfig();
     private RequestSpecification requestSpec;
     private ResponseSpecification responseSpec;
-    private String accessToken = apiConfig.getAccessToken();
+    private String accessToken = apiConfig.getGitHubApiToken();
 
     protected ApiSpecification() {
         requestSpec = with()

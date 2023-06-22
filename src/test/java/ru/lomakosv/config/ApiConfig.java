@@ -9,7 +9,7 @@ import org.aeonbits.owner.Config;
 public interface ApiConfig extends Config {
 
     @Key("api.token.github")
-    String getAccessToken();
+    String getGitHubApiToken();
 
     @Key("login.gitHub")
     String getGitHubLogin();

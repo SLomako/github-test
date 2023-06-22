@@ -12,7 +12,8 @@ public class CreationRepositoryResponse {
     @JsonProperty("node_id")
     private String nodeId;
     private String name;
-    private String full_name;
+    @JsonProperty("full_name")
+    private String fullName;
     @JsonProperty("private")
     private Boolean isPrivate;
     private Owner owner;
