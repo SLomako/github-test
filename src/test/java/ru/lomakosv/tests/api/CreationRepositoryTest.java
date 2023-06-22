@@ -5,6 +5,8 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import ru.lomakosv.data.TestData;
 import ru.lomakosv.tests.api.model.CreationRepositoryErrorResponse;
 import ru.lomakosv.tests.api.model.CreationRepositoryRequest;
@@ -16,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("SLomako")
 @Feature("API-тестирование")
 @DisplayName("API: Создание репозитория")
+@Execution(ExecutionMode.CONCURRENT)
 public class CreationRepositoryTest {
 
     private ApiSpecification apiSpecification;
