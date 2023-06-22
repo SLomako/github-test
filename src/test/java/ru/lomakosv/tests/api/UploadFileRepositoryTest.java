@@ -20,11 +20,14 @@ public class UploadFileRepositoryTest extends ApiTestBase {
 
     private ApiSpecification apiSpecification;
     private TestData testData;
+    private Base64Converter base64Converter;
 
     @BeforeEach
     void setUpTest() {
         apiSpecification = new ApiSpecification();
         testData = new TestData();
+        base64Converter = new Base64Converter();
+
     }
 
     @DisplayName("Тест: Успешная загрузка файла")
@@ -32,7 +35,7 @@ public class UploadFileRepositoryTest extends ApiTestBase {
     void UploadFileTest() {
         PutFileContentsRepositoryRequest putFileContentsRepositoryRequest = new PutFileContentsRepositoryRequest();
         putFileContentsRepositoryRequest.setMessage(testData.getFakerMessage());
-        putFileContentsRepositoryRequest.setContent(Base64Converter.encodeToBase64(testData.getFakerContent()));
+        putFileContentsRepositoryRequest.setContent(base64Converter.encodeToBase64(testData.getFakerContent()));
 
         String response = given(apiSpecification.getRequestSpec())
                 .body(putFileContentsRepositoryRequest)

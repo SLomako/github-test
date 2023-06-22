@@ -24,11 +24,13 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
 
     private ApiSpecification apiSpecification;
     private TestData testData;
+    private ApiZipFileManager apiZipFileManager;
 
     @BeforeEach
     void setUpTest() {
         apiSpecification = new ApiSpecification();
         testData = new TestData();
+        apiZipFileManager = new ApiZipFileManager();
     }
 
     @DisplayName("Тест: Скачивание и чтение содержимого файла README из ZIP-архива")
@@ -42,7 +44,7 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
                 .statusCode(200)
                 .spec(apiSpecification.getResponseSpec()).extract().response();
 
-        String fileContent = ApiZipFileManager.readFileContentFromZip(response, "README.md");
+        String fileContent = apiZipFileManager.readFileContentFromZip(response, "README.md");
 
         assertThat(fileContent)
                 .isNotNull()
@@ -61,7 +63,7 @@ public class DownloadAndReadRepositoryTest extends ApiTestBase {
                 .extract()
                 .response();
 
-        String fileContent = ApiZipFileManager.readFileContentFromZip(response, "nonexistent-file.txt");
+        String fileContent = apiZipFileManager.readFileContentFromZip(response, "nonexistent-file.txt");
         assertThat(fileContent).isEqualTo("Файл nonexistent-file.txt не найден в ZIP-архиве");
     }
 

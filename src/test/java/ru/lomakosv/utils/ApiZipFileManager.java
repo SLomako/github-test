@@ -10,7 +10,7 @@ import java.util.zip.ZipInputStream;
 
 public class ApiZipFileManager {
 
-    static public String readFileContentFromZip(Response apiResponse, String fileName) throws IOException {
+    public String readFileContentFromZip(Response apiResponse, String fileName) throws IOException {
 
         byte[] zipContent = apiResponse.asByteArray();
         try (ByteArrayInputStream bais = new ByteArrayInputStream(zipContent);

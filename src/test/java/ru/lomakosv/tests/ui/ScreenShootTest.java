@@ -22,12 +22,15 @@ public class ScreenShootTest extends UiTestBase {
     private MainPage mainPage;
     private LoginPage loginPage;
     private AssertScreenShootUtil assertScreenShootUtil;
+    private PathScreenShot pathScreenShot;
 
     @BeforeEach
     void setUpTest() {
         mainPage = new MainPage();
         loginPage = new LoginPage();
         assertScreenShootUtil = new AssertScreenShootUtil();
+        pathScreenShot = new PathScreenShot();
+
     }
 
     @Critical
@@ -35,9 +38,9 @@ public class ScreenShootTest extends UiTestBase {
     @Test
     void testMainPageHeader() {
         String screenshotName = "mainpage_header";
-        String expectedScreenshotPath = PathScreenShot.getExpectedScreenshotPath(screenshotName);
-        String actualScreenshotPath = PathScreenShot.getActualScreenshotPath(screenshotName);
-        String diffImagePath = PathScreenShot.getDiffImagePath(screenshotName);
+        String expectedScreenshotPath = pathScreenShot.getExpectedScreenshotPath(screenshotName);
+        String actualScreenshotPath = pathScreenShot.getActualScreenshotPath(screenshotName);
+        String diffImagePath = pathScreenShot.getDiffImagePath(screenshotName);
 
         step("Открыть главную страницу", () ->
                 mainPage.openPage(baseUrl));
@@ -53,9 +56,9 @@ public class ScreenShootTest extends UiTestBase {
     @Test
     void testLoginBody() {
         String screenshotName = "login";
-        String expectedScreenshotPath = PathScreenShot.getExpectedScreenshotPath(screenshotName);
-        String actualScreenshotPath = PathScreenShot.getActualScreenshotPath(screenshotName);
-        String diffImagePath = PathScreenShot.getDiffImagePath(screenshotName);
+        String expectedScreenshotPath = pathScreenShot.getExpectedScreenshotPath(screenshotName);
+        String actualScreenshotPath = pathScreenShot.getActualScreenshotPath(screenshotName);
+        String diffImagePath = pathScreenShot.getDiffImagePath(screenshotName);
 
         step("Открыть страницу входа", () ->
                 loginPage.openLoginPage(testData.getUrlLoginPage()));
