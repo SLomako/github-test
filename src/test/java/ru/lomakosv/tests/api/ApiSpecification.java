@@ -3,7 +3,6 @@ package ru.lomakosv.tests.api;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import lombok.Data;
 import ru.lomakosv.config.ApiConfig;
 import ru.lomakosv.config.ConfigurationManager;
 
@@ -13,15 +12,15 @@ import static io.restassured.filter.log.LogDetail.STATUS;
 import static io.restassured.http.ContentType.JSON;
 import static ru.lomakosv.helpers.CustomApiListener.withCustomTemplates;
 
-@Data
 public class ApiSpecification {
 
-    private ApiConfig apiConfig = ConfigurationManager.getApiConfig();
-    private RequestSpecification requestSpec;
-    private ResponseSpecification responseSpec;
-    private String accessToken = apiConfig.getGitHubApiToken();
+    private final RequestSpecification requestSpec;
+    private final ResponseSpecification responseSpec;
 
     protected ApiSpecification() {
+        ApiConfig apiConfig = ConfigurationManager.getApiConfig();
+        String accessToken = apiConfig.getGitHubApiToken();
+
         requestSpec = with()
                 .baseUri("https://api.github.com")
                 .header("Authorization", "token " + accessToken)
