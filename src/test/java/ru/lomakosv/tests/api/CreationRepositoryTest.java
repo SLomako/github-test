@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import ru.lomakosv.data.TestData;
-import ru.lomakosv.tests.api.model.CreationRepositoryErrorResponse;
-import ru.lomakosv.tests.api.model.CreationRepositoryRequest;
-import ru.lomakosv.tests.api.model.CreationRepositoryResponse;
+import ru.lomakosv.tests.api.models.CreationRepositoryErrorResponse;
+import ru.lomakosv.tests.api.models.CreationRepositoryRequest;
+import ru.lomakosv.tests.api.models.CreationRepositoryResponse;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;

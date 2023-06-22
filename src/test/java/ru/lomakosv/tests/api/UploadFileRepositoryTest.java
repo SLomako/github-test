@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.data.TestData;
-import ru.lomakosv.tests.api.model.PutFileContentsRepositoryRequest;
+import ru.lomakosv.tests.api.models.PutFileContentsRepositoryRequest;
 import ru.lomakosv.utils.Base64Converter;
 
 import static io.restassured.RestAssured.given;

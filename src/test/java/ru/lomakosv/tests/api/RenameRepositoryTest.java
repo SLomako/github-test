@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.data.TestData;
-import ru.lomakosv.tests.api.model.PatchRepositoryRequest;
+import ru.lomakosv.tests.api.models.PatchRepositoryRequest;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
