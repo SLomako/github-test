@@ -33,14 +33,14 @@ public class UiTestBase {
         testData = new TestData();
         SelenideLogger.addListener("allure", new AllureSelenide());
         Configuration.pageLoadStrategy = System.getProperty("selenide.pageLoadStrategy", "eager");
-        Configuration.baseUrl = webConfig.baseUrl();
+        Configuration.baseUrl = webConfig.getBaseUrl();
         String[] browserWithVersion = webConfig.getBrowserAndVersion();
         Configuration.browser = browserWithVersion[0];
         Configuration.browserVersion = browserWithVersion[1];
-        Configuration.browserSize = webConfig.browserSize();
+        Configuration.browserSize = webConfig.getBrowserSize();
 
         if (isRemote) {
-            String remoteUrl = webConfig.remoteUrl();
+            String remoteUrl = webConfig.getRemoteUrl();
             Configuration.remote = "https://" + authSelenoidConfig.getRemoteUserName() + ":" + authSelenoidConfig.getRemotePassword() + "@" + remoteUrl + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(

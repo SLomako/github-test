@@ -14,12 +14,12 @@ public interface UiConfig extends Config {
 
     @DefaultValue("1920x1080")
     @Key("ui.browserSize")
-    String browserSize();
+    String getBrowserSize();
 
     @DefaultValue("https://github.com")
     @Key("ui.baseURL")
-    String baseUrl();
+    String getBaseUrl();
 
     @Key("ui.remoteURL")
-    String remoteUrl();
+    String getRemoteUrl();
 }
