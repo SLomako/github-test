@@ -1,8 +1,8 @@
-## github-tester
+## github-test
 
 ### Описание проекта
 
-Проект GitHub Tester - это автоматизированный набор тестов для проверки функциональности и надежности GitHub.
+Проект GitHub Test - это автоматизированный набор тестов для проверки функциональности GitHub.
 Он включает в себя API-тесты для взаимодействия с GitHub API и UI-тесты для проверки пользовательского интерфейса.
 
 [<img src=".github/logo/java.png" alt="java_8" width="85" height="85"/>](https://www.oracle.com/ru/java/technologies/javase-jre8-downloads.html)
@@ -17,42 +17,45 @@
 
 API-тесты:
 
-1. **CreationRepositoryTest** - cоздания репозитория.
-    - `testCreateRepository()`: cоздания репозитория.
-    - `testCreateRepositoryWithExistingName`: cоздания репозитория с уже существующим именем.
-2. **DownloadAndReadRepositoryTest** - cкачивания и чтения содержимого репозитория.
-    - `testDownloadAndReadFileContentFromZipReadme`: cкачивания и чтения содержимого файла README из ZIP-архива.
-    - `testDownloadAndReadNonexistentFileFromZip`: cкачивания и чтения содержимого несуществующего файла из ZIP-архива.
-3. **ListOfUserRepositoriesTest** - получения списка репозиториев пользователя.
+1. **CreationRepositoryTest** - cоздание репозитория.
+    - `testCreateRepository`: cоздание репозитория.
+    - `testCreateRepositoryWithExistingName`: cоздание репозитория с уже существующим именем.
+2. **DownloadAndReadRepositoryTest** - cкачивание и чтение содержимого репозитория.
+    - `testDownloadAndReadFileContentFromZipReadme`: cкачивание и чтение содержимого файла README из ZIP-архива.
+    - `testDownloadAndReadNonexistentFileFromZip`: cкачивание и чтение содержимого несуществующего файла из ZIP-архива.
+3. **ListOfUserRepositoriesTest** - получение списка репозиториев пользователя.
     - `testListOfUserRepositories`: список репозиториев пользователя.
-4. **RenameRepositoryTest** - переименования репозитория.
-    - `renameRepository`: успешное переименования репозитория.
-5. **UploadFileRepositoryTest** - загрузки файла в репозиторий.
+4. **RenameRepositoryTest** - переименование репозитория.
+    - `renameRepository`: успешное переименование репозитория.
+5. **UploadFileRepositoryTest** - загрузка файла в репозиторий.
     - `UploadFileTest`: успешная загрузки файла в репозиторий.
 
 UI-тесты:
 
-1. **CheckProjectTest** - проверка комплектность данных проекта и наличие основных компонентов.
-    - `testSearchInDownloadedFile`: поиск ключевых слов в скачанном файле.
-    - `testForEmptyStrings`: проверка на избыточные пустые строки подряд.
-2. **LoginTest** - авторизации.
+1. **LoginTest** - авторизации.
     - `testSuccessfulLogin`: успешный вход в систему.
     - `testLoginWithInvalidEmail`: вход в систему с недопустимым email.
     - `testLoginWithInvalidPassword`: вход в систему с недопустимым паролем.
-3. **ScreenShootTest** - скриншоты страниц.
+2. **ScreenShootTest** - скриншоты страниц.
     - `testMainPageHeader`: скриншот заголовка главной страницы.
     - `testLoginBody`: скриншот тела формы входа.
-4. **UnauthenticatedTests** - включает в себя тесты для неаутентифицированных пользователей.
+3. **UnauthenticatedTests** - включает в себя тесты для неаутентифицированных пользователей.
     - `testMainPageLoads`: загрузка главной страницы.
     - `testSearch`: поиск на главной странице.
     - `testAdvancedSearch`: расширенноый поиск.
+
+Дополнительный функционал проверка финальный дипловом курса qa.guru
+
+1. **CheckProjectTest** - проверка комплектность данных проекта и наличие основных компонентов.
+   - `testSearchInDownloadedFile`: поиск ключевых слов в скачанном файле.
+   - `testForEmptyStrings`: проверка на избыточные пустые строки подряд.
+
 
 ### Настройка и запуск тестов
 
 Вы можете запустить тесты локально или удаленно. Для конфигурации тестов вы можете использовать следующие системные
 свойства:
 
-- `selenide.pageLoadStrategy` - стратегия загрузки страницы (по умолчанию "eager").
 - `ownerName` - имя владельца репозитория (по умолчанию "SLomako").
 - `repoUnderTest` - репозиторий для тестирования (по умолчанию "SLomako/github-tester").
 - `searchRepo` - репозиторий для поиска (по умолчанию "SLomako/github-tester").
@@ -92,16 +95,16 @@ gradle clean test -DisRemote=true
 Для запуска тестов локально на вашем компьютере, вам необходимо добавить файл test.properties в папку ресурсов (test/src/resources/config/). В этом файле необходимо указать следующие свойства:
 
 ```bash 
-login.gitHub=Ваш_логин_GitHub
-password.gitHub=Ваш_пароль_GitHub
-username.selenoid=Ваш_логин_Selenoid
-password.selenoid=Ваш_пароль_Selenoid
-api.token.github=Ваш_токен_GitHub
-ui.browserWithVersion=Ваш_браузер_и_версия
-ui.browserSize=Размер_экрана
-ui.baseURL=Базовый_URL
-ui.remoteURL=URL_удаленного_хоста
-ui.isRemote=Запуск_на_удаленном_хосте
+login.gitHub=GitHub_login
+password.gitHub=GitHub_password
+username.selenoid=Selenoid_username
+password.selenoid=Selenoid_password
+api.token.github=GitHub_token
+ui.browserWithVersion=browser_and_version
+ui.browserSize=Screen_size
+ui.baseURL=BaseURL
+ui.remoteURL=Remote_host_URL
+ui.isRemote=Run_on_remote_host
 ```
 
 ### Ссылки и визуализация
