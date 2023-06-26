@@ -95,16 +95,16 @@ gradle clean test -DisRemote=true
 Для запуска тестов локально на вашем компьютере, вам необходимо добавить файл test.properties в папку ресурсов (test/src/resources/config/). В этом файле необходимо указать следующие свойства:
 
 ```bash 
-login.gitHub=GitHub_login
-password.gitHub=GitHub_password
-username.selenoid=Selenoid_username
-password.selenoid=Selenoid_password
-api.token.github=GitHub_token
-ui.browserWithVersion=browser_and_version
-ui.browserSize=Screen_size
+login.gitHub=GitHub login
+password.gitHub=GitHub password
+username.selenoid=Selenoid username
+password.selenoid=Selenoid password
+api.token.github=GitHub token
+ui.browserWithVersion=browser and version
+ui.browserSize=Screen size
 ui.baseURL=BaseURL
-ui.remoteURL=Remote_host_URL
-ui.isRemote=Run_on_remote_host
+ui.remoteURL=Remote host URL
+ui.isRemote=Run on remote host
 ```
 
 ### Ссылки и визуализация
