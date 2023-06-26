@@ -7,9 +7,9 @@ import lombok.Data;
 public class TestData {
     private final String
             ownerName = System.getProperty("ownerName", "SLomako"),
-            repoUnderTest = System.getProperty("repoUnderTest", "SLomako/github-tester"),
-            searchRepo = System.getProperty("searchRepo", "SLomako/github-tester"),
-            searchResult = System.getProperty("searchResult", "SLomako/github-tester"),
+            repoUnderTest = System.getProperty("repoUnderTest", "SLomako/github-test"),
+            searchRepo = System.getProperty("searchRepo", "SLomako/github-test"),
+            searchResult = System.getProperty("searchResult", "SLomako/github-test"),
             advancedSearchLanguage = System.getProperty("advancedSearchLanguage", "Java"),
             advancedSearchFrom = System.getProperty("advancedSearchFrom", "Slomako"),
             advancedSearchDate = System.getProperty("advancedSearchDate", "2023"),

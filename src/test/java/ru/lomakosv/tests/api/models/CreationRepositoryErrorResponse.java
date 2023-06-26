@@ -20,6 +20,6 @@ public class CreationRepositoryErrorResponse {
         private String resource;
         private String code;
         private String field;
-        private String message;}
-
+        private String message;
+    }
 }
