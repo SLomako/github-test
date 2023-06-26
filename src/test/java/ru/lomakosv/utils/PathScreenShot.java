@@ -4,22 +4,21 @@ import com.codeborne.selenide.Configuration;
 
 public class PathScreenShot {
 
+    private static final String SCREENSHOT_PATH = "src/test/resources/screenshottest/";
+
     public String getExpectedScreenshotPath(String screenshotName) {
         if (Configuration.remote != null && !Configuration.remote.isEmpty()) {
-            return "src/test/resources/screenshottest/remote_" + screenshotName + ".png";
+            return SCREENSHOT_PATH + "remote_" + screenshotName + ".png";
         } else {
-
-            return "src/test/resources/screenshottest/local_" + screenshotName + ".png";
+            return SCREENSHOT_PATH + "local_" + screenshotName + ".png";
         }
     }
 
     public String getActualScreenshotPath(String screenshotName) {
-
-        return "src/test/resources/screenshottest/actual_" + screenshotName + ".png";
+        return SCREENSHOT_PATH + "actual_" + screenshotName + ".png";
     }
 
     public String getDiffImagePath(String screenshotName) {
-
-        return "src/test/resources/screenshottest/diff_" + screenshotName + ".png";
+        return SCREENSHOT_PATH + "diff_" + screenshotName + ".png";
     }
 }
