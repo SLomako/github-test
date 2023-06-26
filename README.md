@@ -97,8 +97,8 @@ gradle clean test -DisRemote=true
 ```bash 
 login.gitHub=GitHub_login
 password.gitHub=GitHub_password
-username.selenoid=Selenoid_username
-password.selenoid=Selenoid_password
+selenoid.username=Selenoid_username
+selenoid.password=Selenoid_password
 api.token.github=GitHub_token
 ui.browserWithVersion=browser_and_version
 ui.browserSize=Screen_size

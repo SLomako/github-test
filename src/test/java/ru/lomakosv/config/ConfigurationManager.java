@@ -27,8 +27,8 @@ public class ConfigurationManager {
 
     public static synchronized SelenoidConfig getAuthSelenoidConfig() {
         if (authSelenoidConfig == null) {
-            authSelenoidConfig = ConfigCache.getOrCreate(SelenoidConfig.class, System.getProperties());
-        }
+                    authSelenoidConfig = ConfigCache.getOrCreate(SelenoidConfig.class, System.getProperties());
+                }
         return authSelenoidConfig;
     }
 }
