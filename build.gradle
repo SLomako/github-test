@@ -4,9 +4,6 @@ plugins {
     id 'io.freefair.lombok' version '8.0.1'
 }
 
-group 'ru.lomakosv'
-version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
@@ -47,12 +44,11 @@ dependencies {
     )
 }
 
-task deleteAllure(type: Delete) {
-    delete 'build/allure-results'
-    delete 'build/report'
-}
-
 test {
+    tasks.register("deleteAllure", Delete) {
+        delete 'build/allure-results'
+        delete 'build/report'
+    }
     dependsOn deleteAllure
     systemProperties(System.getProperties())
     useJUnitPlatform()
