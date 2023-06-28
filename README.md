@@ -59,9 +59,9 @@ UI-тесты:
 свойства:
 
 - `ownerName` - имя владельца репозитория (по умолчанию "SLomako").
-- `repoUnderTest` - репозиторий для тестирования (по умолчанию "SLomako/github-tester").
-- `searchRepo` - репозиторий для поиска (по умолчанию "SLomako/github-tester").
-- `searchResult` - ожидаемый результат поиска (по умолчанию "github-tester").
+- `repoUnderTest` - репозиторий для тестирования (по умолчанию "SLomako/github-test").
+- `searchRepo` - репозиторий для поиска (по умолчанию "SLomako/github-test").
+- `searchResult` - ожидаемый результат поиска (по умолчанию "github-test").
 - `advancedSearchLanguage` - язык для расширенного поиска (по умолчанию "Java").
 - `advancedSearchFrom` - источник для расширенного поиска (по умолчанию "Slomako").
 - `advancedSearchDate` - дата для расширенного поиска (по умолчанию "2023").
