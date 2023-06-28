@@ -13,9 +13,10 @@ public class LoginPage {
             loginField = $("#login_field"),
             passwordField = $("#password"),
             loginButton = $("[name=commit]"),
-            featurePreviewIndicator = $(".js-feature-preview-indicator-container"),
-            usernameElement = $(".css-truncate-target"),
+            featurePreviewIndicator = $("[class='avatar circle']"),
+            userNameString = $("[class='Truncate-text']"),
             alertElement = $(".js-flash-alert");
+
 
     public LoginPage openLoginPage(String urlLoginPage) {
         open(urlLoginPage);
@@ -50,7 +51,7 @@ public class LoginPage {
     }
 
     public String getUsername() {
-        return usernameElement.getText();
+        return userNameString.getText();
     }
 
     public String getAlertText() {
