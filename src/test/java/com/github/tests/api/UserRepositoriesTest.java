@@ -1,5 +1,6 @@
 package com.github.tests.api;
 
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.response.Response;
@@ -15,8 +16,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static com.github.tests.api.specs.Specification.*;
 
 @Owner("SLomako")
-@Feature("Список репозиториев пользователя")
-@DisplayName("API: Список репозиториев пользователя")
+@Epic("Список репозиториев пользователя")
+@Feature("API: Список репозиториев пользователя")
 public class UserRepositoriesTest {
 
     private final String userRepositoriesEndpoint = "users/SLomako/repos";

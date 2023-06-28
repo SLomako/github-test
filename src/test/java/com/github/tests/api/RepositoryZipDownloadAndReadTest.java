@@ -2,6 +2,7 @@ package com.github.tests.api;
 
 import com.github.data.TestData;
 import com.github.tests.api.managers.RepositoryManager;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.response.Response;
@@ -17,8 +18,8 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Owner("SLomako")
-@Feature("Чтение и Скачивание содержимого репозитория")
-@DisplayName("API: Чтение и Скачивание содержимого репозитория")
+@Epic("Чтение и Скачивание содержимого репозитория")
+@Feature("API: Чтение и Скачивание содержимого репозитория")
 public class RepositoryZipDownloadAndReadTest {
 
     private final ApiZipFileManager apiZipFileManager = new ApiZipFileManager();

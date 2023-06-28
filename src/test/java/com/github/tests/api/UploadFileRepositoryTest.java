@@ -2,6 +2,7 @@ package com.github.tests.api;
 
 import com.github.data.TestData;
 import com.github.tests.api.managers.RepositoryManager;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.path.json.JsonPath;
@@ -16,8 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static com.github.tests.api.specs.Specification.*;
 
 @Owner("SLomako")
-@Feature("Загрузка файла в репозиторий")
-@DisplayName("API: Загрузка файла в репозиторий")
+@Epic("Загрузка файла в репозиторий")
+@Feature("API: Загрузка файла в репозиторий")
 public class UploadFileRepositoryTest {
 
     private final Base64Converter base64Converter = new Base64Converter();

@@ -1,4 +1,4 @@
-package com.github.tests.ui.steps;
+package com.github.tests.ui.pages;
 
 import io.qameta.allure.Step;
 
@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RepositoryActionsSteps {
+public class RepositoryActionsPage {
 
     @Step("Открываем страницу репозитория {searchQuery}")
     public void openMainPage(String searchQuery) {

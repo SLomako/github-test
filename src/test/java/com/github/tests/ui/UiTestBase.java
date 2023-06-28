@@ -8,6 +8,7 @@ import com.github.config.SelenoidConfig;
 import com.github.data.TestData;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
@@ -20,18 +21,14 @@ import java.util.Map;
 @Execution(ExecutionMode.CONCURRENT)
 public class UiTestBase {
 
-    protected UiConfig webConfig = ConfigurationManager.getUiConfig();
-    protected SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
-    protected TestData testData;
-    protected boolean isRemote = Boolean.getBoolean("isRemote");
+    protected static UiConfig webConfig = ConfigurationManager.getUiConfig();
+    protected static SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
+    protected TestData testData = new TestData();
+    protected static boolean isRemote = Boolean.getBoolean("isRemote");
 
 
-    @BeforeEach
-    void setUpBase() {
-        webConfig = ConfigurationManager.getUiConfig();
-        authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
-        testData = new TestData();
-        SelenideLogger.addListener("allure", new AllureSelenide());
+    @BeforeAll
+    static void setUpBase() {
         Configuration.pageLoadStrategy = System.getProperty("selenide.pageLoadStrategy", "eager");
         Configuration.baseUrl = webConfig.getBaseUrl();
         String[] browserWithVersion = webConfig.getBrowserAndVersion();
@@ -49,6 +46,11 @@ public class UiTestBase {
             ));
             Configuration.browserCapabilities = capabilities;
         }
+    }
+
+    @BeforeEach
+    void setUpListener(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterEach

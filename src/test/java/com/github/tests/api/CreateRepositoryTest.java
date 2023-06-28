@@ -6,6 +6,7 @@ import com.github.tests.api.models.CreationRepositoryRequest;
 import com.github.tests.api.models.CreationRepositoryResponse;
 import com.github.tests.api.managers.RepositoryManager;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
@@ -19,8 +20,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static com.github.tests.api.specs.Specification.*;
 
 @Owner("SLomako")
-@Feature("Создание репозитория")
-@DisplayName("API: Создание репозитория")
+@Epic("Создание репозитория")
+@Feature("API: Создание репозитория")
 @Execution(ExecutionMode.CONCURRENT)
 public class CreateRepositoryTest {
 

@@ -3,9 +3,9 @@ package com.github.tests.ui;
 import com.github.helpers.annotations.Critical;
 import com.github.utils.AssertScreenShootUtil;
 import com.github.utils.PathScreenShot;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import com.github.tests.ui.pages.LoginPage;
@@ -15,26 +15,17 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 
 @Owner("SLomako")
-@Feature("UI-тестирование")
-@DisplayName("UI: Скриншоты страниц")
+@Epic("Скриншоты страниц")
+@Feature("UI: Скриншоты страниц")
 public class ScreenShootTest extends UiTestBase {
 
-    private MainPage mainPage;
-    private LoginPage loginPage;
-    private AssertScreenShootUtil assertScreenShootUtil;
-    private PathScreenShot pathScreenShot;
-
-    @BeforeEach
-    void setUpTest() {
-        mainPage = new MainPage();
-        loginPage = new LoginPage();
-        assertScreenShootUtil = new AssertScreenShootUtil();
-        pathScreenShot = new PathScreenShot();
-
-    }
+    private final MainPage mainPage = new MainPage();
+    private final LoginPage loginPage = new LoginPage();
+    private final AssertScreenShootUtil assertScreenShootUtil = new AssertScreenShootUtil();
+    private final PathScreenShot pathScreenShot = new PathScreenShot();
 
     @Critical
-    @DisplayName("Тест: Скриншот заголовка главной страницы")
+    @DisplayName("Скриншот заголовка главной страницы")
     @Test
     void testMainPageHeader() {
         String screenshotName = "mainpage_header";
@@ -52,7 +43,7 @@ public class ScreenShootTest extends UiTestBase {
     }
 
     @Critical
-    @DisplayName("Тест: Скриншот тела формы входа")
+    @DisplayName("Скриншот тела формы входа")
     @Test
     void testLoginBody() {
         String screenshotName = "login";
@@ -63,8 +54,7 @@ public class ScreenShootTest extends UiTestBase {
         step("Открыть страницу входа", () ->
                 loginPage.openLoginPage(testData.getUrlLoginPage()));
 
-        step("Нажать на заголовок формы входа", () ->
-                loginPage.clickLoginFormHeader());
+        step("Нажать на заголовок формы входа", loginPage::clickLoginFormHeader);
 
 
         step("Сделать скриншот тела формы входа", () ->

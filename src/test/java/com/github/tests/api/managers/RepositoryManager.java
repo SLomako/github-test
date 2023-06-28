@@ -11,8 +11,6 @@ public class RepositoryManager {
 
     private final TestData testData = new TestData();
     private final String deleteEndpoint = String.format("repos/%s/", testData.getOwnerName());
-    private final String createEndpoint = "user/repos";
-
 
     @Step("Создание репозитория со случайным названием")
     public String createRepository() {
@@ -21,6 +19,7 @@ public class RepositoryManager {
         createResponse.setDescription(testData.getDescriptionRepository());
         createResponse.setAutoInit(testData.getAutoInit());
 
+        String createEndpoint = "user/repos";
         given(getRequestSpec())
                 .body(createResponse)
                 .when()

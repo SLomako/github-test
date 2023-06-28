@@ -5,12 +5,11 @@ import com.github.utils.ConsecutiveEmptyLines;
 import com.github.utils.ContentChecker;
 import com.github.utils.UiZipProcessor;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import com.github.tests.ui.steps.RepositoryActionsSteps;
+import com.github.tests.ui.pages.RepositoryActionsPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,21 +21,13 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Owner("SLomako")
-@Epic("Проверка комплектности данных проекта")
-@Feature("UI-тестирование")
-@DisplayName("UI: Проверка наличия основных компонентов проекта")
+@Epic("Проверка дипломных проектов qa.guru")
+@Feature("UI: Проверка наличия основных компонентов проекта")
 public class CheckProjectTest extends UiTestBase {
 
-    private UiZipProcessor uiZipProcessor;
-    private TestData testData;
-    private RepositoryActionsSteps steps;
-
-    @BeforeEach
-    void setUpTest() {
-        uiZipProcessor = new UiZipProcessor();
-        testData = new TestData();
-        steps = new RepositoryActionsSteps();
-    }
+    private final UiZipProcessor uiZipProcessor = new UiZipProcessor();
+    private final TestData testData = new TestData();
+    private final RepositoryActionsPage repositoryActionsPage = new RepositoryActionsPage();
 
     static Stream<List<String>> parameterizedTestData() {
         return Stream.of(
@@ -44,15 +35,15 @@ public class CheckProjectTest extends UiTestBase {
         );
     }
 
-    @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Тест: Поиск в скачанном файле")
     @ParameterizedTest(name = "ключевых слов {0}")
     @MethodSource("parameterizedTestData")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Поиск в скачанном файле")
     void testSearchInDownloadedFile(List<String> parameterizedTestData) throws IOException {
-        steps.openMainPage(testData.getRepoUnderTest());
-        steps.clickCodeButton();
+        repositoryActionsPage.openMainPage(testData.getRepoUnderTest());
+        repositoryActionsPage.clickCodeButton();
 
-        File inputZip = steps.clickDownloadZipButton();
+        File inputZip = repositoryActionsPage.clickDownloadZipButton();
         File outputFile = uiZipProcessor.processZipFile(inputZip);
 
         step("Проверить содержимое скачанного файла", () -> {
@@ -61,14 +52,14 @@ public class CheckProjectTest extends UiTestBase {
         });
     }
 
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Тест: Проверка на избыточные пустые строки подряд")
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Проверка на избыточные пустые строки подряд")
     void testForEmptyStrings() throws IOException {
-        steps.openMainPage(testData.getRepoUnderTest());
-        steps.clickCodeButton();
+        repositoryActionsPage.openMainPage(testData.getRepoUnderTest());
+        repositoryActionsPage.clickCodeButton();
 
-        File inputZip = steps.clickDownloadZipButton();
+        File inputZip = repositoryActionsPage.clickDownloadZipButton();
         File outputFile = uiZipProcessor.processZipFile(inputZip);
 
         step("Проверить содержимое скачанного файла", () -> {

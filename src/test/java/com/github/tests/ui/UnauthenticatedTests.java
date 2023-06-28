@@ -14,25 +14,17 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Owner("SLomako")
-@Epic("Неаутентифицированные пользователи")
-@Feature("UI-тестирование")
-@DisplayName("UI: Неаутентифицированные тесты")
+@Epic("Неаутентифицированные тесты")
+@Feature("UI: Неаутентифицированные тесты")
 public class UnauthenticatedTests extends UiTestBase {
 
-    private MainPage mainPage;
-    private SearchPage searchPage;
-    private TestData testData;
+    private final MainPage mainPage  = new MainPage();
+    private final SearchPage searchPage = new SearchPage();
+    private final TestData testData = new TestData();
 
-    @BeforeEach
-    void setUpTest() {
-        mainPage = new MainPage();
-        searchPage = new SearchPage();
-        testData = new TestData();
-    }
-
-    @Blocker
     @Test
-    @DisplayName("Тест: Загрузка главной страницы")
+    @Blocker
+    @DisplayName("Загрузка главной страницы")
     void testMainPageLoads() {
         step("Открыть главную страницу", () ->
                 mainPage.openPage(baseUrl));
@@ -41,8 +33,8 @@ public class UnauthenticatedTests extends UiTestBase {
                 Assertions.assertTrue(mainPage.getTitle().contains(testData.getPageTitle())));
     }
 
-    @Blocker
     @Test
+    @Blocker
     @DisplayName("Тест: Поиск на главной странице")
     void testSearch() {
         step("Открыть главную страницу", () ->
@@ -56,9 +48,9 @@ public class UnauthenticatedTests extends UiTestBase {
                 .isTrue();
     }
 
-    @Blocker
     @Test
-    @DisplayName("Тест: Расширенный поиск")
+    @Blocker
+    @DisplayName("Расширенный поиск")
     void testAdvancedSearch() {
         step("Открыть страницу расширенного поиска", () ->
                 searchPage.openAdvancedSearch(testData.getUrlSearchAdvanced()));

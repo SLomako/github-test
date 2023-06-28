@@ -1,6 +1,7 @@
 package com.github.tests.api;
 
 import com.github.tests.api.managers.RepositoryManager;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.response.Response;
@@ -15,8 +16,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static com.github.tests.api.specs.Specification.*;
 
 @Owner("SLomako")
-@Feature("Переименование репозитория")
-@DisplayName("API: Переименование репозитория")
+@Epic("Переименование репозитория")
+@Feature("API: Переименование репозитория")
 public class RenameRepositoryTest {
 
     private final RepositoryManager repositoryManager = new RepositoryManager();
