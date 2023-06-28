@@ -1,6 +1,8 @@
 package com.github.helpers;
 
 import com.codeborne.selenide.Selenide;
+import com.github.config.ConfigurationManager;
+import com.github.config.UiConfig;
 import com.github.tests.ui.TestBase;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -16,6 +18,9 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach extends TestBase {
+
+    protected static UiConfig uiConfig = ConfigurationManager.getUiConfig();
+
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
@@ -49,7 +54,7 @@ public class Attach extends TestBase {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
+        String videoUrl = "https://" + uiConfig.getRemoteUrl() + "/video/" + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
