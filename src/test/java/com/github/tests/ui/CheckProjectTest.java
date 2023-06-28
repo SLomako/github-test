@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("SLomako")
 @Epic("Проверка дипломных проектов qa.guru")
 @Feature("UI: Проверка наличия основных компонентов проекта")
-public class CheckProjectTest extends UiTestBase {
+public class CheckProjectTest extends TestBase {
 
     private final UiZipProcessor uiZipProcessor = new UiZipProcessor();
     private final TestData testData = new TestData();

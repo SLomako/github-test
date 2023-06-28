@@ -15,7 +15,7 @@ import static io.qameta.allure.Allure.step;
 @Owner("SLomako")
 @Epic("Авторизация")
 @Feature("UI: Авторизация")
-public class LoginTest extends UiTestBase {
+public class LoginTest extends TestBase {
 
     private final ApiConfig apiConfig = ConfigurationManager.getApiConfig();
     private final LoginPage loginPage  = new LoginPage();

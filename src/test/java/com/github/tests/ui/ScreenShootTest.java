@@ -17,7 +17,7 @@ import static io.qameta.allure.Allure.step;
 @Owner("SLomako")
 @Epic("Скриншоты страниц")
 @Feature("UI: Скриншоты страниц")
-public class ScreenShootTest extends UiTestBase {
+public class ScreenShootTest extends TestBase {
 
     private final MainPage mainPage = new MainPage();
     private final LoginPage loginPage = new LoginPage();

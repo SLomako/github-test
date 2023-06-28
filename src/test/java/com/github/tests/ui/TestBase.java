@@ -19,13 +19,12 @@ import com.github.helpers.Attach;
 import java.util.Map;
 
 @Execution(ExecutionMode.CONCURRENT)
-public class UiTestBase {
+public class TestBase {
 
     protected static UiConfig webConfig = ConfigurationManager.getUiConfig();
     protected static SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
     protected TestData testData = new TestData();
     protected static boolean isRemote = Boolean.getBoolean("isRemote");
-
 
     @BeforeAll
     static void setUpBase() {
