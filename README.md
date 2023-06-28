@@ -18,18 +18,18 @@
 
 API-тесты:
 
-1. **CreationRepositoryTest** - cоздание репозитория.
-    - `testCreateRepository`: cоздание репозитория.
-    - `testCreateRepositoryWithExistingName`: cоздание репозитория с уже существующим именем.
-2. **DownloadAndReadRepositoryTest** - cкачивание и чтение содержимого репозитория.
-    - `testDownloadAndReadFileContentFromZipReadme`: cкачивание и чтение содержимого файла README из ZIP-архива.
-    - `testDownloadAndReadNonexistentFileFromZip`: cкачивание и чтение содержимого несуществующего файла из ZIP-архива.
-3. **ListOfUserRepositoriesTest** - получение списка репозиториев пользователя.
-    - `testListOfUserRepositories`: список репозиториев пользователя.
-4. **RenameRepositoryTest** - переименование репозитория.
-    - `renameRepository`: успешное переименование репозитория.
-5. **UploadFileRepositoryTest** - загрузка файла в репозиторий.
-    - `UploadFileTest`: успешная загрузки файла в репозиторий.
+1. **CreationRepositoryTest** - Создание репозитория.
+    - `testCreateRepository`: Тест для создания репозитория.
+    - `testCreateRepositoryWithExistingName`:  Тест для создания репозитория с уже существующим именем.
+2. **RepositoryZipDownloadAndReadTest** - Скачивание и чтение содержимого репозитория.
+    - `testDownloadAndReadFileContentFromZipReadme`: Тест для скачивания и чтения содержимого файла README из ZIP-архива.
+    - `testDownloadAndReadNonexistentFileFromZip`: Тест для скачивания и чтения содержимого несуществующего файла из ZIP-архива.
+3. **UserRepositoriesTest** - Получение списка репозиториев пользователя.
+    - `testListOfUserRepositories`: Тест для получения списка репозиториев пользователя.
+4. **RenameRepositoryTest** - Переименование репозитория.
+    - `renameRepository`: Тест для успешного переименования репозитория.
+5. **UploadFileRepositoryTest** - Загрузка файла в репозиторий.
+    - `UploadFileTest`:Тест для успешной загрузки файла в репозиторий.
 
 UI-тесты:
 

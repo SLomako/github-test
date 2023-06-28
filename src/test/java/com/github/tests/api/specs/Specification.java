@@ -1,4 +1,4 @@
-package com.github.tests.api;
+package com.github.tests.api.specs;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
@@ -6,39 +6,48 @@ import io.restassured.specification.ResponseSpecification;
 import com.github.config.ApiConfig;
 import com.github.config.ConfigurationManager;
 
+import static io.restassured.RestAssured.expect;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
 import static io.restassured.http.ContentType.JSON;
 import static com.github.helpers.CustomApiListener.withCustomTemplates;
 
-public class ApiSpecification {
+public class Specification {
 
-    private final RequestSpecification requestSpec;
-    private final ResponseSpecification responseSpec;
-
-    protected ApiSpecification() {
+    public static RequestSpecification getRequestSpec() {
         ApiConfig apiConfig = ConfigurationManager.getApiConfig();
         String accessToken = apiConfig.getGitHubApiToken();
 
-        requestSpec = with()
+        return with()
                 .baseUri("https://api.github.com")
                 .header("Authorization", "token " + accessToken)
                 .log().all()
                 .filter(withCustomTemplates())
                 .contentType(JSON);
+    }
 
-        responseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification getResponseSpec() {
+        return new ResponseSpecBuilder()
                 .log(STATUS)
                 .log(BODY)
                 .build();
     }
 
-    public RequestSpecification getRequestSpec() {
-        return requestSpec;
+    public static ResponseSpecification getOk200Spec() {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .build();
     }
 
-    public ResponseSpecification getResponseSpec() {
-        return responseSpec;
+    public static ResponseSpecification getCreated201Spec() {
+        return expect()
+                .statusCode(201);
+    }
+
+    public static ResponseSpecification getValidationFailed422Spec() {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(422)
+                .build();
     }
 }

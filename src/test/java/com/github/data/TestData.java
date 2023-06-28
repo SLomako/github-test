@@ -15,8 +15,6 @@ public class TestData {
             advancedSearchDate = System.getProperty("advancedSearchDate", "2023"),
             urlSearchAdvanced = "https://github.com/search/advanced",
             urlLoginPage = "https://github.com/login",
-            repositoryName = "API",
-            descriptionRepository = "Тест создание репозитория через API",
             targetFileName = "README.md",
             negativeTargetFileName = "invalid_file.txt",
             pageTitle = "GitHub: Let’s build from here · GitHub";
@@ -25,11 +23,11 @@ public class TestData {
 
     private final Faker faker = new Faker();
     private final String
-            fakerNameNewFile = faker.app().name() + ".txt",
-            fakerRepositoryName = faker.lorem().word(),
-            fakerNewNameRepository = faker.lorem().word(),
-            fakerDescriptionRepository = faker.name().title(),
-            fakerMessage = faker.rockBand().name(),
-            fakerContent = faker.dog().name();
+            nameNewFile = faker.app().name() + ".txt",
+            repositoryName = faker.lorem().word(),
+            newNameRepository = faker.lorem().word(),
+            descriptionRepository = faker.name().title(),
+            message = faker.rockBand().name(),
+            content = faker.dog().name();
 }
 

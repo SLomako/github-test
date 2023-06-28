@@ -45,11 +45,6 @@ dependencies {
 }
 
 test {
-    tasks.register("deleteAllure", Delete) {
-        delete 'build/allure-results'
-        delete 'build/report'
-    }
-    dependsOn deleteAllure
     systemProperties(System.getProperties())
     useJUnitPlatform()
 

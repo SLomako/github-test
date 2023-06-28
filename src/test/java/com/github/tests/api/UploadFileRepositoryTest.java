@@ -1,54 +1,63 @@
 package com.github.tests.api;
 
+import com.github.data.TestData;
+import com.github.tests.api.managers.RepositoryManager;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.restassured.path.json.JsonPath;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import com.github.data.TestData;
 import com.github.tests.api.models.PutFileContentsRepositoryRequest;
 import com.github.utils.Base64Converter;
 
+import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
+import static com.github.tests.api.specs.Specification.*;
 
 @Owner("SLomako")
-@Feature("API-тестирование")
+@Feature("Загрузка файла в репозиторий")
 @DisplayName("API: Загрузка файла в репозиторий")
-public class UploadFileRepositoryTest extends ApiTestBase {
+public class UploadFileRepositoryTest {
 
-    private ApiSpecification apiSpecification;
-    private TestData testData;
-    private Base64Converter base64Converter;
+    private final Base64Converter base64Converter = new Base64Converter();
+    private final RepositoryManager repositoryManager = new RepositoryManager();
+    private final TestData testData = new TestData();
 
-    @BeforeEach
-    void setUpTest() {
-        apiSpecification = new ApiSpecification();
-        testData = new TestData();
-        base64Converter = new Base64Converter();
-
-    }
-
-    @DisplayName("Тест: Успешная загрузка файла")
     @Test
-    void UploadFileTest() {
-        PutFileContentsRepositoryRequest putFileContentsRepositoryRequest = new PutFileContentsRepositoryRequest();
-        putFileContentsRepositoryRequest.setMessage(testData.getFakerMessage());
-        putFileContentsRepositoryRequest.setContent(base64Converter.encodeToBase64(testData.getFakerContent()));
+    @DisplayName("Успешная загрузка файла")
+    void uploadFileTest() {
+        String repositoryName = repositoryManager.createRepository();
+        String endpoint = String.format("repos/%s/%s/contents/%s", testData.getOwnerName(), repositoryName, testData.getNameNewFile());
 
-        String response = given(apiSpecification.getRequestSpec())
-                .body(putFileContentsRepositoryRequest)
-                .when()
-                .put(String.format("repos/%s/%s/contents/%s", testData.getOwnerName(), repositoryName, testData.getFakerNameNewFile()))
-                .then()
-                .spec(apiSpecification.getResponseSpec())
-                .statusCode(201).extract().asString();
 
-        String contentName = JsonPath.from(response).getString("content.name");
-        String commitMessage = JsonPath.from(response).getString("commit.message");
+        step("Подготовка данных для загрузки файла", () ->
+                step("Загрузка файла в репозиторий", () -> {
+                    PutFileContentsRepositoryRequest putFileContentsRepositoryRequest = new PutFileContentsRepositoryRequest();
+                    putFileContentsRepositoryRequest.setMessage(testData.getMessage());
+                    putFileContentsRepositoryRequest.setContent(base64Converter.encodeToBase64(testData.getContent()));
 
-        assertThat(contentName).isEqualTo(testData.getFakerNameNewFile());
-        assertThat(commitMessage).isEqualTo(testData.getFakerMessage());
+                    String response = given(getRequestSpec())
+                            .body(putFileContentsRepositoryRequest)
+                            .when()
+                            .put(endpoint)
+                            .then()
+                            .spec(getResponseSpec())
+                            .spec(getCreated201Spec())
+                            .extract().asString();
+
+                    step("Проверка информации о загруженном файле", () -> {
+                        String contentName = JsonPath.from(response).getString("content.name");
+                        String commitMessage = JsonPath.from(response).getString("commit.message");
+
+                        assertThat(contentName).isEqualTo(testData.getNameNewFile());
+                        assertThat(commitMessage).isEqualTo(testData.getMessage());
+                    });
+                })
+        );
+
+        step("Удаление репозитория", () ->
+                repositoryManager.deleteRepository(repositoryName)
+        );
     }
 }

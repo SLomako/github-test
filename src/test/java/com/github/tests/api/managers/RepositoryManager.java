@@ -1,30 +1,30 @@
-package com.github.tests.api;
+package com.github.tests.api.managers;
 
 import com.github.data.TestData;
 import com.github.tests.api.models.CreationRepositoryRequest;
+import io.qameta.allure.Step;
 
 import static io.restassured.RestAssured.given;
+import static com.github.tests.api.specs.Specification.getRequestSpec;
 
 public class RepositoryManager {
 
-    private final ApiSpecification apiSpecification;
-    private final TestData testData;
+    private final TestData testData = new TestData();
+    private final String deleteEndpoint = String.format("repos/%s/", testData.getOwnerName());
+    private final String createEndpoint = "user/repos";
 
-    public RepositoryManager() {
-        apiSpecification = new ApiSpecification();
-        testData = new TestData();
-    }
 
+    @Step("Создание репозитория со случайным названием")
     public String createRepository() {
         CreationRepositoryRequest createResponse = new CreationRepositoryRequest();
-        createResponse.setName(testData.getFakerRepositoryName());
+        createResponse.setName(testData.getRepositoryName());
         createResponse.setDescription(testData.getDescriptionRepository());
         createResponse.setAutoInit(testData.getAutoInit());
 
-        given(apiSpecification.getRequestSpec())
+        given(getRequestSpec())
                 .body(createResponse)
                 .when()
-                .post("user/repos")
+                .post(createEndpoint)
                 .then()
                 .statusCode(201);
 
@@ -34,10 +34,11 @@ public class RepositoryManager {
         return repositoryName;
     }
 
+    @Step("Удаление репозитория с именем: {repositoryName}")
     public void deleteRepository(String repositoryName) {
-        given(apiSpecification.getRequestSpec())
+        given(getRequestSpec())
                 .when()
-                .delete(String.format("repos/%s/%s", testData.getOwnerName(), repositoryName))
+                .delete(deleteEndpoint + repositoryName)
                 .then()
                 .statusCode(204);
         System.out.println("Удаляем репозиторий с именем: " + repositoryName);
