@@ -41,8 +41,8 @@ UI-тесты:
     - `testMainPageHeader`: скриншот заголовка главной страницы.
     - `testLoginBody`: скриншот тела формы входа.
 3.  **SearchTest**  - тест на поиск.
-   - `testSearch`: поиск на главной странице.
-   - `testAdvancedSearch`: расширенноый поиск.
+    - `testSearch`: поиск на главной странице.
+    - `testAdvancedSearch`: расширенноый поиск.
 4.  **UnauthenticatedTests** - включает в себя тесты для неаутентифицированных пользователей.
     - `testMainPageLoads`: загрузка главной страницы.
 
