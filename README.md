@@ -18,18 +18,18 @@
 
 API-тесты:
 
-1. **CreationRepositoryTest** - Создание репозитория.
-    - `testCreateRepository`: Тест для создания репозитория.
-    - `testCreateRepositoryWithExistingName`:  Тест для создания репозитория с уже существующим именем.
-2. **RepositoryZipDownloadAndReadTest** - Скачивание и чтение содержимого репозитория.
-    - `testDownloadAndReadFileContentFromZipReadme`: Тест для скачивания и чтения содержимого файла README из ZIP-архива.
-    - `testDownloadAndReadNonexistentFileFromZip`: Тест для скачивания и чтения содержимого несуществующего файла из ZIP-архива.
-3. **UserRepositoriesTest** - Получение списка репозиториев пользователя.
-    - `testListOfUserRepositories`: Тест для получения списка репозиториев пользователя.
-4. **RenameRepositoryTest** - Переименование репозитория.
-    - `renameRepository`: Тест для успешного переименования репозитория.
-5. **UploadFileRepositoryTest** - Загрузка файла в репозиторий.
-    - `UploadFileTest`:Тест для успешной загрузки файла в репозиторий.
+1. **CreationRepositoryTest** - создание репозитория.
+    - `testCreateRepository`: тест для создания репозитория.
+    - `testCreateRepositoryWithExistingName`:  тест для создания репозитория с уже существующим именем.
+2. **RepositoryZipDownloadAndReadTest** - скачивание и чтение содержимого репозитория.
+    - `testDownloadAndReadFileContentFromZipReadme`: тест для скачивания и чтения содержимого файла README из ZIP-архива.
+    - `testDownloadAndReadNonexistentFileFromZip`: тест для скачивания и чтения содержимого несуществующего файла из ZIP-архива.
+3. **UserRepositoriesTest** - получение списка репозиториев пользователя.
+    - `testListOfUserRepositories`: тест для получения списка репозиториев пользователя.
+4. **RenameRepositoryTest** - переименование репозитория.
+    - `renameRepository`: тест для успешного переименования репозитория.
+5. **UploadFileRepositoryTest** - загрузка файла в репозиторий.
+    - `UploadFileTest`:тест для успешной загрузки файла в репозиторий.
 
 UI-тесты:
 
@@ -40,10 +40,12 @@ UI-тесты:
 2. **ScreenShootTest** - скриншоты страниц.
     - `testMainPageHeader`: скриншот заголовка главной страницы.
     - `testLoginBody`: скриншот тела формы входа.
-3. **UnauthenticatedTests** - включает в себя тесты для неаутентифицированных пользователей.
+3  **SearchTest**  - тест на поиск.
+   - `testSearch`: поиск на главной странице.
+   - `testAdvancedSearch`: расширенноый поиск.
+4**UnauthenticatedTests** - включает в себя тесты для неаутентифицированных пользователей.
     - `testMainPageLoads`: загрузка главной страницы.
-    - `testSearch`: поиск на главной странице.
-    - `testAdvancedSearch`: расширенноый поиск.
+
 
 Дополнительный функционал: проверка дипловом курса qa.guru
 
