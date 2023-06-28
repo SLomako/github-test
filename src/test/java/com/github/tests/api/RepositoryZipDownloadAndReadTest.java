@@ -25,7 +25,6 @@ public class RepositoryZipDownloadAndReadTest {
     private final ApiZipFileManager apiZipFileManager = new ApiZipFileManager();
     private final RepositoryManager repositoryManager = new RepositoryManager();
     private final TestData testData = new TestData();
-
     private String repositoryName;
 
     @BeforeEach
