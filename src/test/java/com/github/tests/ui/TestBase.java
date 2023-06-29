@@ -26,7 +26,6 @@ public class TestBase {
     protected static boolean isRemote = Boolean.getBoolean("isRemote");
     protected final TestData testData = new TestData();
 
-
     @BeforeAll
     static void setUpBase() {
         Configuration.pageLoadStrategy = System.getProperty("selenide.pageLoadStrategy", "eager");

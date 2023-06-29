@@ -17,7 +17,6 @@ public class LoginPage {
             userNameString = $("[class='Truncate-text']"),
             alertElement = $(".js-flash-alert");
 
-
     public LoginPage openLoginPage(String urlLoginPage) {
         open(urlLoginPage);
         return this;

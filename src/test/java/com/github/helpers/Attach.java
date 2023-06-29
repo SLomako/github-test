@@ -28,7 +28,7 @@ public class Attach extends TestBase {
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotFromBrowser(String attachName, String ownerName, String repositoryName) {
-            open(String.format("https://github.com/%s/%s", ownerName, repositoryName));
+        open(String.format("https://github.com/%s/%s", ownerName, repositoryName));
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 

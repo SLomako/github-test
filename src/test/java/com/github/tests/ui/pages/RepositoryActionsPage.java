@@ -11,8 +11,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class RepositoryActionsPage {
 
-    private SelenideElement codeButton = $("[class*='Button--primary']");
-    private SelenideElement downloadZipButton = $("[href*='.zip']");
+    private final SelenideElement
+            codeButton = $("[class*='Button--primary']"),
+            downloadZipButton = $("[href*='.zip']");
 
     @Step("Открываем страницу репозитория {searchQuery}")
     public void openMainPage(String searchQuery) {
