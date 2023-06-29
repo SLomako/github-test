@@ -2,6 +2,7 @@ package com.github.tests.ui;
 
 import com.github.config.ApiConfig;
 import com.github.config.ConfigurationManager;
+import com.github.data.TestData;
 import io.qameta.allure.*;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Assertions;
@@ -18,7 +19,8 @@ import static io.qameta.allure.Allure.step;
 public class LoginTest extends TestBase {
 
     private final ApiConfig apiConfig = ConfigurationManager.getApiConfig();
-    private final LoginPage loginPage  = new LoginPage();
+    private final TestData testData = new TestData();
+    private final LoginPage loginPage = new LoginPage();
 
     @Test
     @Severity(SeverityLevel.BLOCKER)

@@ -26,26 +26,26 @@ public class RepositoryZipDownloadAndReadTest {
     private final RepositoryManager repositoryManager = new RepositoryManager();
     private final TestData testData = new TestData();
     private String repositoryName;
+    private final String endpoint = String.format("repos/%s/%s/zipball/main", testData.getOwnerName(), repositoryName);
+
 
     @BeforeEach
     void createRepos() {
         step("Создание репозитория", () ->
-            repositoryName = repositoryManager.createRepository()
+                repositoryName = repositoryManager.createRepository()
         );
     }
 
     @AfterEach
     void deleteRepos() {
         step("Удаление репозитория", () ->
-            repositoryManager.deleteRepository(repositoryName)
+                repositoryManager.deleteRepository(repositoryName)
         );
     }
 
     @Test
     @DisplayName("Скачивание и чтение содержимого файла README из ZIP-архива")
     void testDownloadAndReadFileContentFromZipReadme() {
-        String endpoint = String.format("repos/%s/%s/zipball/main", testData.getOwnerName(), repositoryName);
-
         step("Загрузка ZIP-архива репозитория", () ->
                 step("Чтение содержимого файла README из ZIP-архива", () -> {
                     Response response = given()
@@ -71,7 +71,6 @@ public class RepositoryZipDownloadAndReadTest {
     @Test
     @DisplayName("Скачивание и чтение содержимого несуществующего файла из ZIP-архива")
     void testDownloadAndReadNonexistentFileFromZip() {
-        String endpoint = String.format("repos/%s/%s/zipball/main", testData.getOwnerName(), repositoryName);
 
         step("Загрузка ZIP-архива репозитория", () ->
                 step("Чтение содержимого несуществующего файла из ZIP-архива", () -> {

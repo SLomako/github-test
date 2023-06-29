@@ -5,7 +5,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.config.ConfigurationManager;
 import com.github.config.SelenoidConfig;
-import com.github.data.TestData;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -23,7 +22,6 @@ public class TestBase {
 
     protected static UiConfig webConfig = ConfigurationManager.getUiConfig();
     protected static SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
-    protected TestData testData = new TestData();
     protected static boolean isRemote = Boolean.getBoolean("isRemote");
 
     @BeforeAll
@@ -48,7 +46,7 @@ public class TestBase {
     }
 
     @BeforeEach
-    void setUpListener(){
+    void setUpListener() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 

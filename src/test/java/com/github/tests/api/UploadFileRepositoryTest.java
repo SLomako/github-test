@@ -31,7 +31,6 @@ public class UploadFileRepositoryTest {
         String repositoryName = repositoryManager.createRepository();
         String endpoint = String.format("repos/%s/%s/contents/%s", testData.getOwnerName(), repositoryName, testData.getNameNewFile());
 
-
         step("Подготовка данных для загрузки файла", () ->
                 step("Загрузка файла в репозиторий", () -> {
                     PutFileContentsRepositoryRequest putFileContentsRepositoryRequest = new PutFileContentsRepositoryRequest();

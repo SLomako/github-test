@@ -16,6 +16,7 @@ import static com.github.helpers.CustomApiListener.withCustomTemplates;
 public class Specification {
 
     public static RequestSpecification getRequestSpec() {
+
         ApiConfig apiConfig = ConfigurationManager.getApiConfig();
         String accessToken = apiConfig.getGitHubApiToken();
 

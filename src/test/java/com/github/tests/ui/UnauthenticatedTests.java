@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 @Feature("UI: Неаутентифицированные тесты")
 public class UnauthenticatedTests extends TestBase {
 
-    private final MainPage mainPage  = new MainPage();
+    private final MainPage mainPage = new MainPage();
     private final TestData testData = new TestData();
 
     @Test

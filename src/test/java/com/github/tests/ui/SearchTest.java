@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Feature("UI: Проверка поиска")
 public class SearchTest extends TestBase {
 
-    private final MainPage mainPage  = new MainPage();
+    private final MainPage mainPage = new MainPage();
     private final SearchPage searchPage = new SearchPage();
     private final TestData testData = new TestData();
 

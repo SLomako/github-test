@@ -1,5 +1,6 @@
 package com.github.tests.ui;
 
+import com.github.data.TestData;
 import com.github.helpers.annotations.Critical;
 import com.github.utils.AssertScreenShootUtil;
 import com.github.utils.PathScreenShot;
@@ -19,6 +20,7 @@ import static io.qameta.allure.Allure.step;
 @Feature("UI: Скриншоты страниц")
 public class ScreenShootTest extends TestBase {
 
+    private final TestData testData = new TestData();
     private final MainPage mainPage = new MainPage();
     private final LoginPage loginPage = new LoginPage();
     private final AssertScreenShootUtil assertScreenShootUtil = new AssertScreenShootUtil();
