@@ -19,21 +19,21 @@
 API-тесты:
 
 1. **CreationRepositoryTest** - создание репозитория.
-    - `testCreateRepository`: тест для создания репозитория.
-    - `testCreateRepositoryWithExistingName`:  тест для создания репозитория с уже существующим именем.
+    - `testCreateRepository`: успешное создание репозитория.
+    - `testCreateRepositoryWithExistingName`:  создание репозитория с уже существующим именем.
 2. **RepositoryZipDownloadAndReadTest** - скачивание и чтение содержимого репозитория.
-    - `testDownloadAndReadFileContentFromZipReadme`: тест для скачивания и чтения содержимого файла README из ZIP-архива.
-    - `testDownloadAndReadNonexistentFileFromZip`: тест для скачивания и чтения содержимого несуществующего файла из ZIP-архива.
+    - `testDownloadAndReadFileContentFromZipReadme`: скачивание и чтение содержимого файла README из ZIP-архива.
+    - `testDownloadAndReadNonexistentFileFromZip`: скачивание и чтение содержимого несуществующего файла из ZIP-архива.
 3. **UserRepositoriesTest** - получение списка репозиториев пользователя.
-    - `testListOfUserRepositories`: тест для получения списка репозиториев пользователя.
+    - `testListOfUserRepositories`: получение списка репозиториев пользователя.
 4. **RenameRepositoryTest** - переименование репозитория.
-    - `renameRepository`: тест для успешного переименования репозитория.
+    - `renameRepository`: успешное переименование репозитория.
 5. **UploadFileRepositoryTest** - загрузка файла в репозиторий.
-    - `UploadFileTest`:тест для успешной загрузки файла в репозиторий.
+    - `UploadFileTest`:успешная загрузка файла в репозиторий.
 
 UI-тесты:
 
-1. **LoginTest** - авторизации.
+1. **LoginTest** - авторизация.
     - `testSuccessfulLogin`: успешный вход в систему.
     - `testLoginWithInvalidEmail`: вход в систему с недопустимым email.
     - `testLoginWithInvalidPassword`: вход в систему с недопустимым паролем.
@@ -42,7 +42,7 @@ UI-тесты:
     - `testLoginBody`: скриншот тела формы входа.
 3.  **SearchTest**  - тест на поиск.
     - `testSearch`: поиск на главной странице.
-    - `testAdvancedSearch`: расширенноый поиск.
+    - `testAdvancedSearch`: расширенный поиск.
 4.  **UnauthenticatedTests** - включает в себя тесты для неаутентифицированных пользователей.
     - `testMainPageLoads`: загрузка главной страницы.
 
@@ -97,16 +97,11 @@ gradle clean test -DisRemote=true
 Для запуска тестов локально на вашем компьютере, вам необходимо добавить файл test.properties в папку ресурсов (test/src/resources/config/). В этом файле необходимо указать следующие свойства:
 
 ```bash 
-login.gitHub=GitHub_login
-password.gitHub=GitHub_password
-selenoid.username=Selenoid_username
-selenoid.password=Selenoid_password
-api.token.github=GitHub_token
-ui.browserWithVersion=browser_and_version
-ui.browserSize=Screen_size
-ui.baseURL=BaseURL
-ui.remoteURL=Remote_host_URL
-ui.isRemote=Run_on_remote_host
+login.gitHub=login
+password.gitHub=password
+selenoid.username=username
+selenoid.password=password
+api.token.github=token
 ```
 
 ### Ссылки и визуализация

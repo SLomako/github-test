@@ -20,6 +20,7 @@ public interface UiConfig extends Config {
     @Key("ui.baseURL")
     String getBaseUrl();
 
+    @DefaultValue("selenoid.autotests.cloud")
     @Key("ui.remoteURL")
     String getRemoteUrl();
 }
