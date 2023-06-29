@@ -1,9 +1,9 @@
 package com.github.tests.api.specs;
 
+import com.github.config.GitHubConfig;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import com.github.config.ApiConfig;
 import com.github.config.ConfigurationManager;
 
 import static io.restassured.RestAssured.expect;
@@ -17,8 +17,8 @@ public class Specification {
 
     public static RequestSpecification getRequestSpec() {
 
-        ApiConfig apiConfig = ConfigurationManager.getApiConfig();
-        String accessToken = apiConfig.getGitHubApiToken();
+        GitHubConfig apiConfig = ConfigurationManager.getGitHubConfig();
+        String accessToken = apiConfig.token();
 
         return with()
                 .baseUri("https://api.github.com")

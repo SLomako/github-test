@@ -1,6 +1,5 @@
 package com.github.tests.ui;
 
-import com.github.data.TestData;
 import com.github.helpers.annotations.Blocker;
 import com.github.tests.ui.pages.MainPage;
 import com.github.tests.ui.pages.SearchPage;
@@ -17,11 +16,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("SLomako")
 @Epic("Проверка поиска")
 @Feature("UI: Проверка поиска")
+@DisplayName("Проверка поиска")
 public class SearchTest extends TestBase {
 
     private final MainPage mainPage = new MainPage();
     private final SearchPage searchPage = new SearchPage();
-    private final TestData testData = new TestData();
 
     @Test
     @Blocker

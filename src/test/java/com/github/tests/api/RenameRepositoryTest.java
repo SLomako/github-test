@@ -18,6 +18,7 @@ import static com.github.tests.api.specs.Specification.*;
 @Owner("SLomako")
 @Epic("Переименование репозитория")
 @Feature("API: Переименование репозитория")
+@DisplayName("Переименование репозитория")
 public class RenameRepositoryTest {
 
     private final RepositoryManager repositoryManager = new RepositoryManager();

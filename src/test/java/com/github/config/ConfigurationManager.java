@@ -4,12 +4,12 @@ import org.aeonbits.owner.ConfigCache;
 
 public class ConfigurationManager {
 
-    public static ApiConfig getApiConfig() {
-        return ConfigCache.getOrCreate(ApiConfig.class, System.getProperties());
+    public static GitHubConfig getGitHubConfig() {
+        return ConfigCache.getOrCreate(GitHubConfig.class, System.getProperties());
     }
 
-    public static UiConfig getUiConfig() {
-        return ConfigCache.getOrCreate(UiConfig.class, System.getProperties());
+    public static WebConfig getWebConfig() {
+        return ConfigCache.getOrCreate(WebConfig.class, System.getProperties());
     }
 
     public static SelenoidConfig getAuthSelenoidConfig() {

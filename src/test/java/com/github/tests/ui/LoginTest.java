@@ -1,8 +1,7 @@
 package com.github.tests.ui;
 
-import com.github.config.ApiConfig;
+import com.github.config.GitHubConfig;
 import com.github.config.ConfigurationManager;
-import com.github.data.TestData;
 import io.qameta.allure.*;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Assertions;
@@ -16,10 +15,10 @@ import static io.qameta.allure.Allure.step;
 @Owner("SLomako")
 @Epic("Авторизация")
 @Feature("UI: Авторизация")
+@DisplayName("Авторизация")
 public class LoginTest extends TestBase {
 
-    private final ApiConfig apiConfig = ConfigurationManager.getApiConfig();
-    private final TestData testData = new TestData();
+    private final GitHubConfig gitHubConfig = ConfigurationManager.getGitHubConfig();
     private final LoginPage loginPage = new LoginPage();
 
     @Test
@@ -31,17 +30,17 @@ public class LoginTest extends TestBase {
                 loginPage.openLoginPage(testData.getUrlLoginPage()));
 
         step("Ввести логин", () ->
-                loginPage.enterLogin(apiConfig.getGitHubLogin()));
+                loginPage.enterLogin(gitHubConfig.login()));
 
         step("Ввести пароль", () ->
-                loginPage.enterPassword(apiConfig.getGitHubPassword()));
+                loginPage.enterPassword(gitHubConfig.password()));
 
         step("Нажать на кнопку входа", loginPage::clickLoginButton);
 
         step("Нажать на индикатор предварительного просмотра", loginPage::clickFeaturePreviewIndicator);
 
         step("Проверить имя пользователя", () ->
-                Assertions.assertEquals(loginPage.getUsername(), apiConfig.getGitHubLogin()));
+                Assertions.assertEquals(loginPage.getUsername(), gitHubConfig.login()));
     }
 
     @Test
@@ -56,7 +55,7 @@ public class LoginTest extends TestBase {
                 loginPage.enterLogin("invalidEmail"));
 
         step("Ввести пароль", () ->
-                loginPage.enterPassword(apiConfig.getGitHubPassword()));
+                loginPage.enterPassword(gitHubConfig.password()));
 
         step("Нажать на кнопку входа", loginPage::clickLoginButton);
 
@@ -73,7 +72,7 @@ public class LoginTest extends TestBase {
                 loginPage.openLoginPage(testData.getUrlLoginPage()));
 
         step("Ввести логин", () ->
-                loginPage.enterLogin(apiConfig.getGitHubLogin()));
+                loginPage.enterLogin(gitHubConfig.login()));
 
         step("Ввести неправильный пароль", () ->
                 loginPage.enterPassword("InvalidPassword"));

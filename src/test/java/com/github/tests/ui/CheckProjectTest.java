@@ -1,6 +1,5 @@
 package com.github.tests.ui;
 
-import com.github.data.TestData;
 import com.github.utils.ConsecutiveEmptyLines;
 import com.github.utils.ContentChecker;
 import com.github.utils.UiZipProcessor;
@@ -22,11 +21,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Owner("SLomako")
 @Epic("Проверка дипломных проектов qa.guru")
-@Feature("UI: Проверка наличия основных компонентов проекта")
+@Feature("UI: Проверка проекта")
+@DisplayName("Проверка дипломного проекта курса qa.guru")
 public class CheckProjectTest extends TestBase {
 
     private final UiZipProcessor uiZipProcessor = new UiZipProcessor();
-    private final TestData testData = new TestData();
     private final RepositoryActionsPage repositoryActionsPage = new RepositoryActionsPage();
 
     static Stream<List<String>> parameterizedTestData() {

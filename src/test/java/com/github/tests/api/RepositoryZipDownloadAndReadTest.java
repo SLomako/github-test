@@ -20,13 +20,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("SLomako")
 @Epic("Чтение и Скачивание содержимого репозитория")
 @Feature("API: Чтение и Скачивание содержимого репозитория")
+@DisplayName("Чтение и Скачивание содержимого репозитория")
 public class RepositoryZipDownloadAndReadTest {
 
     private final ApiZipFileManager apiZipFileManager = new ApiZipFileManager();
     private final RepositoryManager repositoryManager = new RepositoryManager();
     private final TestData testData = new TestData();
     private String repositoryName;
-    private final String endpoint = String.format("repos/%s/%s/zipball/main", testData.getOwnerName(), repositoryName);
 
 
     @BeforeEach
@@ -46,6 +46,8 @@ public class RepositoryZipDownloadAndReadTest {
     @Test
     @DisplayName("Скачивание и чтение содержимого файла README из ZIP-архива")
     void testDownloadAndReadFileContentFromZipReadme() {
+        String endpoint = String.format("repos/%s/%s/zipball/main", testData.getOwnerName(), repositoryName);
+
         step("Загрузка ZIP-архива репозитория", () ->
                 step("Чтение содержимого файла README из ZIP-архива", () -> {
                     Response response = given()
@@ -71,6 +73,7 @@ public class RepositoryZipDownloadAndReadTest {
     @Test
     @DisplayName("Скачивание и чтение содержимого несуществующего файла из ZIP-архива")
     void testDownloadAndReadNonexistentFileFromZip() {
+        String endpoint = String.format("repos/%s/%s/zipball/main", testData.getOwnerName(), repositoryName);
 
         step("Загрузка ZIP-архива репозитория", () ->
                 step("Чтение содержимого несуществующего файла из ZIP-архива", () -> {

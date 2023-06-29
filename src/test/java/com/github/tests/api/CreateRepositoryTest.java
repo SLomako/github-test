@@ -5,7 +5,6 @@ import com.github.tests.api.models.CreationRepositoryErrorResponse;
 import com.github.tests.api.models.CreationRepositoryRequest;
 import com.github.tests.api.models.CreationRepositoryResponse;
 import com.github.tests.api.managers.RepositoryManager;
-import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -23,6 +22,7 @@ import static com.github.tests.api.specs.Specification.*;
 @Epic("Создание репозитория")
 @Feature("API: Создание репозитория")
 @Execution(ExecutionMode.CONCURRENT)
+@DisplayName("Создание репозитория")
 public class CreateRepositoryTest {
 
     private final TestData testData = new TestData();
@@ -31,8 +31,7 @@ public class CreateRepositoryTest {
     protected String actualRepositoryName;
 
     @Test
-    @DisplayName("Создание репозитория")
-    @Description("Тест для проверки создания репозитория через API")
+    @DisplayName("Успешное создание репозитория")
     void testCreateRepository() {
         step("Создание запроса на создание репозитория", () ->
                 step("Отправка запроса на создание репозитория", () -> {
@@ -68,7 +67,6 @@ public class CreateRepositoryTest {
 
     @Test
     @DisplayName("Создание репозитория с уже существующим именем")
-    @Description("Тест для проверки создания репозитория с уже существующим именем")
     void testCreateRepositoryWithExistingName() {
         step("Создание запроса на создание репозитория с уже существующим именем", () ->
                 step("Отправка запроса на создание репозитория", () -> {

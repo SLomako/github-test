@@ -19,6 +19,7 @@ import static com.github.tests.api.specs.Specification.*;
 @Owner("SLomako")
 @Epic("Загрузка файла в репозиторий")
 @Feature("API: Загрузка файла в репозиторий")
+@DisplayName("Загрузка файла в репозиторий")
 public class UploadFileRepositoryTest {
 
     private final Base64Converter base64Converter = new Base64Converter();

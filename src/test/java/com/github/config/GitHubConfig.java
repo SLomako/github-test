@@ -6,15 +6,15 @@ import org.aeonbits.owner.Config;
         "classpath:config/test.properties",
         "system:properties"
 })
-public interface ApiConfig extends Config {
+public interface GitHubConfig extends Config {
 
     @Key("api.token.github")
-    String getGitHubApiToken();
+    String token();
 
     @Key("login.gitHub")
-    String getGitHubLogin();
+    String login();
 
     @Key("password.gitHub")
-    String getGitHubPassword();
+    String password();
 
 }

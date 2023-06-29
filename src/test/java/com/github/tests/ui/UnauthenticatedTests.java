@@ -1,6 +1,5 @@
 package com.github.tests.ui;
 
-import com.github.data.TestData;
 import com.github.helpers.annotations.Blocker;
 import com.github.tests.ui.pages.MainPage;
 import io.qameta.allure.Epic;
@@ -14,10 +13,10 @@ import static io.qameta.allure.Allure.step;
 @Owner("SLomako")
 @Epic("Неаутентифицированные тесты")
 @Feature("UI: Неаутентифицированные тесты")
+@DisplayName("Неаутентифицированные тесты")
 public class UnauthenticatedTests extends TestBase {
 
     private final MainPage mainPage = new MainPage();
-    private final TestData testData = new TestData();
 
     @Test
     @Blocker

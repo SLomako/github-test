@@ -18,6 +18,7 @@ import static com.github.tests.api.specs.Specification.*;
 @Owner("SLomako")
 @Epic("Список репозиториев пользователя")
 @Feature("API: Список репозиториев пользователя")
+@DisplayName("Список репозиториев пользователя")
 public class UserRepositoriesTest {
 
     private final String userRepositoriesEndpoint = "users/SLomako/repos";

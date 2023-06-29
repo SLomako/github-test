@@ -6,21 +6,21 @@ import org.aeonbits.owner.Config;
         "classpath:config/test.properties",
         "system:properties"
 })
-public interface UiConfig extends Config {
+public interface WebConfig extends Config {
 
     @DefaultValue("Chrome, 112.0")
     @Key("ui.browserWithVersion")
-    String[] getBrowserAndVersion();
+    String[] browserAndVersion();
 
     @DefaultValue("1920x1080")
     @Key("ui.browserSize")
-    String getBrowserSize();
+    String browserSize();
 
     @DefaultValue("https://github.com")
     @Key("ui.baseURL")
-    String getBaseUrl();
+    String baseUrl();
 
     @DefaultValue("selenoid.autotests.cloud")
     @Key("ui.remoteURL")
-    String getRemoteUrl();
+    String remoteUrl();
 }
