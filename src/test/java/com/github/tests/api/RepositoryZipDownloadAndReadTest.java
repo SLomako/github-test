@@ -29,7 +29,6 @@ public class RepositoryZipDownloadAndReadTest {
     private final TestData testData = new TestData();
     private String repositoryName;
 
-
     @BeforeEach
     @Step("Создание репозитория")
     void createRepository() {
