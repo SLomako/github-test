@@ -5,7 +5,6 @@ import com.github.tests.api.managers.RepositoryManager;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,7 +29,6 @@ public class RepositoryZipDownloadAndReadTest {
     private String repositoryName;
 
     @BeforeEach
-    @Step("Создание репозитория")
     void createRepository() {
         step("Создание репозитория", () ->
                 repositoryName = repositoryManager.createRepository()
@@ -38,7 +36,6 @@ public class RepositoryZipDownloadAndReadTest {
     }
 
     @AfterEach
-    @Step("Удаление репозитория")
     void deleteRepository() {
         step("Удаление репозитория", () ->
                 repositoryManager.deleteRepository(repositoryName)

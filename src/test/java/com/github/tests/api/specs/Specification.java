@@ -17,8 +17,8 @@ public class Specification {
 
     public static RequestSpecification getRequestSpec() {
 
-        GitHubConfig apiConfig = ConfigurationManager.getGitHubConfig();
-        String accessToken = apiConfig.token();
+        GitHubConfig GitHubConfig = ConfigurationManager.getGitHubConfig();
+        String accessToken = GitHubConfig.token();
 
         return with()
                 .baseUri("https://api.github.com")
