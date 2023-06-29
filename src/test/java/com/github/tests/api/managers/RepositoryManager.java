@@ -12,7 +12,6 @@ public class RepositoryManager {
     private final TestData testData = new TestData();
     private final String deleteEndpoint = String.format("repos/%s/", testData.getOwnerName());
 
-    @Step("Создание репозитория со случайным названием")
     public String createRepository() {
         CreationRepositoryRequest createResponse = new CreationRepositoryRequest();
         createResponse.setName(testData.getRepositoryName());
@@ -33,7 +32,6 @@ public class RepositoryManager {
         return repositoryName;
     }
 
-    @Step("Удаление репозитория с именем: {repositoryName}")
     public void deleteRepository(String repositoryName) {
         given(getRequestSpec())
                 .when()
