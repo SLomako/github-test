@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 })
 public interface GitHubConfig extends Config {
 
-    @Key("api.token.github")
+    @Key("api.token.gitHub")
     String token();
 
     @Key("login.gitHub")

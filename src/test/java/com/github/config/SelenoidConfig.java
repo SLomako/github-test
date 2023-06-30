@@ -8,14 +8,13 @@ import org.aeonbits.owner.Config;
 })
 public interface SelenoidConfig extends Config {
 
-    @Key("selenoid.username")
+    @Key("selenoid.userName")
     String userName();
 
     @Key("selenoid.password")
     String password();
 
-    @DefaultValue("selenoid.autotests.cloud")
-    @Key("ui.remoteURL")
+    @Key("selenoid.remoteURL")
     String remoteUrl();
 }
 
