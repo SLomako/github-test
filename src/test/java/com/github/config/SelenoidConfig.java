@@ -13,6 +13,10 @@ public interface SelenoidConfig extends Config {
 
     @Key("selenoid.password")
     String password();
+
+    @DefaultValue("selenoid.autotests.cloud")
+    @Key("ui.remoteURL")
+    String remoteUrl();
 }
 
 

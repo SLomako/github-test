@@ -36,7 +36,7 @@ public class TestBase {
         Configuration.browserSize = webConfig.browserSize();
 
         if (isRemote) {
-            String remoteUrl = webConfig.remoteUrl();
+            String remoteUrl = authSelenoidConfig.remoteUrl();
             Configuration.remote = "https://" + authSelenoidConfig.userName() + ":" + authSelenoidConfig.password() + "@" + remoteUrl + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(

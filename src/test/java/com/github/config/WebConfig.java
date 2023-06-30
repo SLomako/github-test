@@ -20,7 +20,4 @@ public interface WebConfig extends Config {
     @Key("ui.baseURL")
     String baseUrl();
 
-    @DefaultValue("selenoid.autotests.cloud")
-    @Key("ui.remoteURL")
-    String remoteUrl();
 }
