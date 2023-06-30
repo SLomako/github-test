@@ -12,7 +12,7 @@ public class ConfigurationManager {
         return ConfigCache.getOrCreate(WebConfig.class, System.getProperties());
     }
 
-    public static SelenoidConfig getAuthSelenoidConfig() {
+    public static SelenoidConfig getSelenoidConfig() {
         return ConfigCache.getOrCreate(SelenoidConfig.class, System.getProperties());
     }
 }

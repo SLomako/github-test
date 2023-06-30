@@ -22,7 +22,7 @@ import java.util.Map;
 public class TestBase {
 
     protected static WebConfig webConfig = ConfigurationManager.getWebConfig();
-    protected static SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
+    protected static SelenoidConfig authSelenoidConfig = ConfigurationManager.getSelenoidConfig();
     protected static boolean isRemote = Boolean.getBoolean("isRemote");
     protected final TestData testData = new TestData();
 

@@ -2,7 +2,7 @@ package com.github.helpers;
 
 import com.codeborne.selenide.Selenide;
 import com.github.config.ConfigurationManager;
-import com.github.config.WebConfig;
+import com.github.config.SelenoidConfig;
 import com.github.tests.ui.TestBase;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -19,7 +19,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach extends TestBase {
 
-    protected static WebConfig uiConfig = ConfigurationManager.getWebConfig();
+    protected static SelenoidConfig selenoidConfig  = ConfigurationManager.getSelenoidConfig();
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
@@ -54,7 +54,7 @@ public class Attach extends TestBase {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://" + uiConfig.remoteUrl() + "/video/" + sessionId() + ".mp4";
+        String videoUrl = "https://" + selenoidConfig.remoteUrl() + "/video/" + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
