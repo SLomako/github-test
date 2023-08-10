@@ -4,7 +4,6 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:config/test.properties",
-        "system:properties"
 })
 public interface SelenoidConfig extends Config {
 
@@ -15,7 +14,7 @@ public interface SelenoidConfig extends Config {
     String password();
 
     @Key("selenoid.remoteURL")
-    String remoteUrl();
+    String url();
 }
 
 
