@@ -16,7 +16,8 @@
 
 Проект представляет собой набор автоматизированных тестов, включающих API- и UI-тесты. Он разделен на следующие модули:
 
-API-тесты:
+<details>
+  <summary>API-тесты:</summary>
 
 1. **CreationRepositoryTest** - создание репозитория.
     - `testCreateRepository`: успешное создание репозитория.
@@ -31,6 +32,7 @@ API-тесты:
 5. **UploadFileRepositoryTest** - загрузка файла в репозиторий.
     - `UploadFileTest`:успешная загрузка файла в репозиторий.
 
+</details>
 UI-тесты:
 
 1. **LoginTest** - авторизация.
@@ -99,7 +101,7 @@ gradle clean test -DisRemote=true
 ```bash 
 login.gitHub=login
 password.gitHub=password
-selenoid.username=username
+selenoid.userName=username
 selenoid.password=password
 api.token.github=token
 ```
